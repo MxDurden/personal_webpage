@@ -46,3 +46,14 @@ a:hover {
   opacity: 0;
   animation: fade-in-up 0.6s ease-out forwards;
 }
+
+/* Typewriter effect */
+.typewriter::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
