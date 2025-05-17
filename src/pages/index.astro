@@ -16,7 +16,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       This site is my digital workspace. You’ll find my skills, past projects, and contact links. If you're hiring, freelancing, or looking for real technical expertise — start below.
     </p>
 
-    <div class="flex flex-wrap gap-4 animate-fade-in-up">
+    <!-- ✅ BOTONES -->
+    <div class="flex flex-wrap gap-4 animate-fade-in-up mb-8">
       <a href="/cv.pdf" class="border border-accent text-accent px-4 py-2 hover:bg-accent hover:text-black transition">
         Download CV
       </a>
@@ -28,21 +29,30 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </a>
     </div>
 
-    <!-- 💻 Mini terminal block -->
-    <div class="mt-8 max-w-fit border border-gray-700 rounded-md bg-[#0a0a0a] shadow-lg font-mono text-sm animate-fade-in-up">
-  <div class="flex items-center gap-2 px-3 py-2 border-b border-gray-700 bg-[#1a1a1a] rounded-t-md">
-    <span class="h-3 w-3 rounded-full bg-red-500"></span>
-    <span class="h-3 w-3 rounded-full bg-yellow-500"></span>
-    <span class="h-3 w-3 rounded-full bg-green-500"></span>
-    <span class="text-xs text-gray-400 ml-2">bytefuck@localhost</span>
-  </div>
-  <div class="px-4 py-3 text-green-400">
-    <p class="mb-1">$ curl -O https://bytefuck.club/cv.pdf</p>
-    <p class="text-gray-500"># direct download.</p>
-  </div>
-</div>
+    <!-- ✅ QUICK FACTS -->
+    <ul class="text-gray-400 mb-8 space-y-1 text-sm max-w-xl animate-fade-in-up">
+      <li> /  15+ years working with Linux, open-source, and infrastructure.</li>
+      <li> /  Strong background in automation, CI/CD, and system hardening.</li>
+      <li> /  Focused on security, performance, and clean, resilient deployments.</li>
+      <li> /  Freelance-friendly. Available for remote and contract work.</li>
+      <li> /  Experience with AWS, Docker, Kubernetes, Ansible, Terraform, GitOps.</li>
+    </ul>
 
+    <!-- ✅ TERMINAL FAKE -->
+    <div class="mt-4 max-w-fit border border-gray-700 rounded-md bg-[#0a0a0a] shadow-lg font-mono text-sm animate-fade-in-up">
+      <div class="flex items-center gap-2 px-3 py-2 border-b border-gray-700 bg-[#1a1a1a] rounded-t-md">
+        <span class="h-3 w-3 rounded-full bg-red-500"></span>
+        <span class="h-3 w-3 rounded-full bg-yellow-500"></span>
+        <span class="h-3 w-3 rounded-full bg-green-500"></span>
+        <span class="text-xs text-gray-400 ml-2">bytefuck@localhost</span>
+      </div>
+      <div class="px-4 py-3 text-green-400">
+        <p class="mb-1">$ curl -O https://bytefuck.club/cv.pdf</p>
+        <p class="text-gray-500"># direct download. no bullshit</p>
+      </div>
+    </div>
   </section>
 </BaseLayout>
+
 
 
