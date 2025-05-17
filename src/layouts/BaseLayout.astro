@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 import Navbar from '../components/Navbar.astro';
 ---
 
@@ -7,10 +8,11 @@ import Navbar from '../components/Navbar.astro';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MrDurden</title>
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body class="bg-black text-white font-mono animate-fade-in">
-    <Navbar class="animate-slide-down" />
+    <header class="animate-slide-down">
+      <Navbar />
+    </header>
     <main class="max-w-7xl mx-auto px-4 py-6">
       <slot />
     </main>
