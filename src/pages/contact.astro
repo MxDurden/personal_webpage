@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <section class="min-h-screen px-6 py-12 text-white">
+    <h1 class="text-4xl font-bold text-gray-100 mb-6">Contact</h1>
+    <p class="text-lg text-gray-400 mb-8 max-w-2xl">
+      Reach out for consulting, collaboration, or just to drop some shell love. No recruiters unless you pay in crypto.
+    </p>
+
+    <div class="bg-gray-900 border border-gray-700 p-6 rounded-lg max-w-xl space-y-6">
+      <div>
+        <p class="text-sm text-gray-500">Email</p>
+        <a href="mailto:consulting@magueylabs.com" class="text-green-400 hover:underline">
+          consulting@magueylabs.com
+        </a>
+      </div>
+      <div>
+        <p class="text-sm text-gray-500">Telegram</p>
+        <a href="https://t.me/magueylabs" class="text-green-400 hover:underline" target="_blank">
+          @magueylabs
+        </a>
+      </div>
+      <div>
+        <p class="text-sm text-gray-500">PGP Public Key</p>
+        <code class="text-xs text-gray-400 break-all">
+          0xABCD 1234 EFFF 5678 9AAA  CCCC 4321 DCBA 9876 0001
+        </code>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

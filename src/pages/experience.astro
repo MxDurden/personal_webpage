@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <section class="min-h-screen px-6 py-12 text-white">
+    <h1 class="text-4xl font-bold text-gray-100 mb-6">Experience</h1>
+    <p class="text-lg text-gray-400 mb-8 max-w-2xl">
+      A timeline of technical achievements, roles, and projects across security, infrastructure, and automation.
+    </p>
+
+    <div class="relative border-l border-gray-700 ml-4 space-y-10">
+      <div class="relative ml-6 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-1.5 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">Lead DevOps Engineer @ Oracle</h3>
+        <time class="block mb-2 text-sm text-gray-500">2025 - Present</time>
+        <p class="text-base text-gray-400">
+          Designed and deployed secure CI/CD pipelines. Implemented zero-trust network zones and hardened cloud workloads.
+        </p>
+      </div>
+
+      <div class="relative ml-6 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-1.5 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">Linux Sysadmin / Security Contractor</h3>
+        <time class="block mb-2 text-sm text-gray-500">2023 - 2025</time>
+        <p class="text-base text-gray-400">
+          Hardened Debian and Gentoo infrastructure for internal and external networks. Created backup automation, auditing tools, and secure tunneling systems.
+        </p>
+      </div>
+
+      <div class="relative ml-6 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-1.5 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">Freelancer — DevSecOps / Ethical Hacking</h3>
+        <time class="block mb-2 text-sm text-gray-500">2020 - 2023</time>
+        <p class="text-base text-gray-400">
+          Built secure VPNs, DNS resolvers, intrusion-resistant systems. Performed black-box and internal testing. Custom DevOps tooling with security baked in.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

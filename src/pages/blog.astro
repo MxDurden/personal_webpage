@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+---
+
+<BaseLayout>
+  <section class="min-h-screen px-6 py-12 text-white">
+    <h1 class="text-4xl font-bold text-gray-100 mb-6">Blog</h1>
+    <p class="text-lg text-gray-400 mb-8 max-w-2xl">
+      Writings on DevSecOps, infrastructure design, and war stories from automation trenches.
+    </p>
+
+    <div class="space-y-6">
+      {posts.map(post => (
+        <div class="border-b border-gray-700 pb-4 animate-fade-in-up">
+          <a href={`/blog/${post.slug}`} class="text-xl text-green-400 hover:underline font-semibold">
+            {post.data.title}
+          </a>
+          <p class="text-sm text-gray-500">{post.data.pubDate}</p>
+          <p class="text-base text-gray-300">{post.data.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

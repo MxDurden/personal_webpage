@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<BaseLayout>
+  <section class="min-h-screen px-6 py-12 text-white">
+    <h1 class="text-4xl font-bold text-gray-100 mb-6">Projects</h1>
+    <p class="text-lg text-gray-400 mb-8 max-w-2xl">
+      A curated selection of infrastructure and security work focused on automation, hardening, and operational excellence.
+    </p>
+
+    <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div class="animate-fade-in-up">
+        <ProjectCard 
+          title="Infra-as-Code Lab"
+          description="Hybrid infrastructure automation using Terraform, Ansible and Jenkins. Designed for production-grade environments with strong security posture."
+          link="#"
+          icon="🧩"
+        />
+      </div>
+      <div class="animate-fade-in-up">
+        <ProjectCard 
+          title="MagueyGuard"
+          description="Privacy-focused DNS firewall. WireGuard-powered VPN with Pi-hole as recursive resolver. Zero trackers, full control."
+          link="#"
+          icon="🔐"
+        />
+      </div>
+      <div class="animate-fade-in-up">
+        <ProjectCard 
+          title="Odoo ERP Hardening"
+          description="Production-grade security tuning for Odoo Community: automated backups, QR module audits, access control, and deployment isolation."
+          link="#"
+          icon="⚙️"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

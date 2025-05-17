@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <section class="min-h-screen px-6 py-12 text-white">
+    <h1 class="text-4xl font-bold text-gray-100 mb-6">Toolset</h1>
+    <p class="text-lg text-gray-400 mb-8 max-w-2xl">
+      Tools and technologies I use to automate, secure, and manage infrastructure.
+    </p>
+
+    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
+        <img src="/logos/python.svg" alt="Python" class="w-12 h-12 mx-auto mb-3" />
+        <p class="text-lg font-semibold text-gray-100">Python</p>
+        <p class="text-sm text-gray-400">Scripting, automation.</p>
+      </div>
+      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
+        <img src="/logos/docker.svg" alt="Docker" class="w-12 h-12 mx-auto mb-3" />
+        <p class="text-lg font-semibold text-gray-100">Docker</p>
+        <p class="text-sm text-gray-400">Containers for everything, isolated and fast</p>
+      </div>
+      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
+        <img src="/logos/ansible.svg" alt="Ansible" class="w-12 h-12 mx-auto mb-3" />
+        <p class="text-lg font-semibold text-gray-100">Ansible</p>
+        <p class="text-sm text-gray-400">Infra config & deployment automation</p>
+      </div>
+      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
+        <img src="/logos/terraform.svg" alt="Terraform" class="w-12 h-12 mx-auto mb-3" />
+        <p class="text-lg font-semibold text-gray-100">Terraform</p>
+        <p class="text-sm text-gray-400">IaC for cloud and on-premise infra</p>
+      </div>
+      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
+        <img src="/logos/wireguard.svg" alt="Wireguard" class="w-12 h-12 mx-auto mb-3" />
+        <p class="text-lg font-semibold text-gray-100">WireGuard</p>
+        <p class="text-sm text-gray-400">VPN tunnels for secure infra zones</p>
+      </div>
+      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
+        <img src="/logos/aws.svg" alt="AWS" class="w-12 h-12 mx-auto mb-3" />
+        <p class="text-lg font-semibold text-gray-100">AWS</p>
+        <p class="text-sm text-gray-400">Cloud infra, EC2, S3, IAM, CloudWatch</p>
+      </div>
+      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
+        <img src="/logos/jenkins.svg" alt="Jenkins" class="w-12 h-12 mx-auto mb-3" />
+        <p class="text-lg font-semibold text-gray-100">Jenkins</p>
+        <p class="text-sm text-gray-400">Pipelines, test/deploy flows</p>
+      </div>
+      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
+        <img src="/logos/linux.svg" alt="Linux" class="w-12 h-12 mx-auto mb-3" />
+        <p class="text-lg font-semibold text-gray-100">Linux</p>
+        <p class="text-sm text-gray-400">Gentoo, Debian, server hardening</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

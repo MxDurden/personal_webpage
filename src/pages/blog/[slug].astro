@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEntryBySlug } from 'astro:content';
+import { Astro } from 'astro';
+
+const { slug } = Astro.params;
+const post = await getEntryBySlug('blog', slug);
+const { Content } = await post.render();
+---
+
+<BaseLayout>
+  <section class="min-h-screen px-6 py-12 text-white max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-gray-100 mb-2">{post.data.title}</h1>
+    <p class="text-sm text-gray-500 mb-6">{post.data.pubDate} — {post.data.author}</p>
+    <article class="prose prose-invert max-w-none">
+      <Content />
+    </article>
+  </section>
+</BaseLayout>

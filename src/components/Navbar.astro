@@ -1,0 +1,36 @@
+---
+const { pathname } = Astro.url;
+---
+
+<nav class="w-full px-6 py-4 border-b border-gray-800 bg-black/80 backdrop-blur sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <a href="/" class="text-green-400 font-mono text-xl">[ MrDurden.sh ]</a>
+    <ul class="flex gap-6 text-sm text-gray-300">
+      <li>
+        <a href="/resume" class={pathname === '/resume' ? 'text-white font-semibold' : 'hover:text-white'}>
+          Resume
+        </a>
+      </li>
+      <li>
+        <a href="/projects" class={pathname === '/projects' ? 'text-white font-semibold' : 'hover:text-white'}>
+          Projects
+        </a>
+      </li>
+      <li>
+        <a href="/toolset" class={pathname === '/toolset' ? 'text-white font-semibold' : 'hover:text-white'}>
+          Toolset
+        </a>
+      </li>
+      <li>
+        <a href="/experience" class={pathname === '/experience' ? 'text-white font-semibold' : 'hover:text-white'}>
+          Experience
+        </a>
+      </li>
+      <li>
+        <a href="/h4x0r" class={pathname === '/h4x0r' ? 'text-green-400 font-bold' : 'hover:text-green-400'}>
+          H4x0r
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
