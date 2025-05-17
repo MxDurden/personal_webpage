@@ -1,32 +1,42 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <section class="min-h-screen px-6 py-12 text-white">
-    <h1 class="text-4xl font-bold text-gray-100 mb-6">Contact</h1>
-    <p class="text-lg text-gray-400 mb-8 max-w-2xl">
-      Reach out for consulting, collaboration, or just to drop some shell love. No recruiters unless you pay in crypto.
+  <section class="min-h-screen flex flex-col justify-center">
+    <h1 class="text-2xl md:text-4xl font-bold text-accent mb-6 animate-fade-in">
+      Contact
+    </h1>
+
+    <p class="text-md text-gray-400 max-w-2xl mb-6 animate-fade-in-up leading-relaxed">
+      I'm currently available for freelance, remote work, or contract roles. If you have a project or position in mind — reach out directly.
     </p>
 
-    <div class="bg-gray-900 border border-gray-700 p-6 rounded-lg max-w-xl space-y-6">
-      <div>
-        <p class="text-sm text-gray-500">Email</p>
-        <a href="mailto:consulting@magueylabs.com" class="text-green-400 hover:underline">
-          consulting@magueylabs.com
-        </a>
+    <!-- ⚡ Contact buttons -->
+    <div class="flex flex-wrap gap-4 mb-8 animate-fade-in-up">
+      <a href="mailto:contact@bytefuck.club" class="border border-accent text-accent px-4 py-2 hover:bg-accent hover:text-black transition">
+        Email Me
+      </a>
+      <a href="https://github.com/mrdurden" target="_blank" class="border border-gray-600 text-gray-300 px-4 py-2 hover:bg-white hover:text-black transition">
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/mrdurden" target="_blank" class="border border-gray-600 text-gray-300 px-4 py-2 hover:bg-white hover:text-black transition">
+        LinkedIn
+      </a>
+    </div>
+
+    <!-- ⚡ Terminal style -->
+    <div class="mt-4 max-w-fit border border-gray-700 rounded-md bg-[#0a0a0a] shadow-lg font-mono text-sm animate-fade-in-up">
+      <div class="flex items-center gap-2 px-3 py-2 border-b border-gray-700 bg-[#1a1a1a] rounded-t-md">
+        <span class="h-3 w-3 rounded-full bg-red-500"></span>
+        <span class="h-3 w-3 rounded-full bg-yellow-500"></span>
+        <span class="h-3 w-3 rounded-full bg-green-500"></span>
+        <span class="text-xs text-gray-400 ml-2">bytefuck@localhost</span>
       </div>
-      <div>
-        <p class="text-sm text-gray-500">Telegram</p>
-        <a href="https://t.me/magueylabs" class="text-green-400 hover:underline" target="_blank">
-          @magueylabs
-        </a>
-      </div>
-      <div>
-        <p class="text-sm text-gray-500">PGP Public Key</p>
-        <code class="text-xs text-gray-400 break-all">
-          0xABCD 1234 EFFF 5678 9AAA  CCCC 4321 DCBA 9876 0001
-        </code>
+      <div class="px-4 py-3 text-green-400 space-y-1">
+        <p>$ open https://github.com/mrdurden</p>
+        <p>$ open https://linkedin.com/in/mrdurden</p>
+        <p>$ mail contact@bytefuck.club</p>
       </div>
     </div>
   </section>
