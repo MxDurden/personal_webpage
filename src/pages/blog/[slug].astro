@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getEntryBySlug } from 'astro:content';
+import { getCollection, getEntryBySlug } from 'astro:content';
 
 export async function getStaticPaths() {
-  return [
-    { params: { slug: "first-post" } }
-  ];
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
 }
 
 const { slug } = Astro.params;
@@ -20,7 +21,7 @@ const { Content } = await post.render();
 
 <BaseLayout>
   <section class="min-h-screen px-6 py-12 text-white max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold text-gray-100 mb-2">{post.data.title}</h1>
+    <h1 class="text-4xl font-bold text-green-400 mb-2">{post.data.title}</h1>
     <p class="text-sm text-gray-500 mb-6">{post.data.pubDate} — {post.data.author}</p>
     <article class="prose prose-invert max-w-none">
       <Content />
