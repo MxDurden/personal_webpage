@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Fira Code', monospace;
   background-color: #0a0a0a;
@@ -46,104 +57,6 @@ a:hover {
   opacity: 0;
   animation: fade-in-up 0.6s ease-out forwards;
 }
-
-/* Typewriter effect */
-.typewriter::after {
-  content: "|";
-  animation: blink 1s infinite;
-}
-
-/* Efecto Principal */
-@keyframes blink {
-  0%, 100% { opacity: 1 }
-  50% { opacity: 0 }
-}
-
-.cursor {
-  display: inline-block;
-  width: 10px;
-  background-color: #39ff14;
-  margin-left: 4px;
-  animation: blink 1s infinite;
-}
-
-@keyframes crt-shutdown {
-  0% {
-    transform: scaleY(1);
-    opacity: 1;
-    filter: brightness(1);
-  }
-  50% {
-    transform: scaleY(0.1);
-    filter: brightness(10);
-  }
-  100% {
-    transform: scaleY(0);
-    opacity: 0;
-  }
-}
-
-.intro-screen {
-  position: fixed;
-  inset: 0;
-  background: black;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: monospace;
-  font-size: 1.5rem;
-  color: #39ff14;
-}
-
-.crt-off {
-  animation: crt-shutdown 0.5s ease-in-out forwards;
-}
-
-/* CRT Apagón completo con punto */
-@keyframes crt-shutdown {
-  0% {
-    transform: scaleY(1) scaleX(1);
-    opacity: 1;
-    filter: brightness(1);
-  }
-  40% {
-    transform: scaleY(0.05) scaleX(1);
-    filter: brightness(8);
-  }
-  60% {
-    transform: scaleY(0.05) scaleX(0.2);
-    filter: brightness(12);
-  }
-  100% {
-    transform: scaleY(0) scaleX(0);
-    opacity: 0;
-  }
-}
-
-.crt-off {
-  animation: crt-shutdown 0.6s ease-in-out forwards;
-}
-
-/* PUNTITO FINAL */
-#beam {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: #39ff14;
-  border-radius: 50%;
-  opacity: 0;
-  animation: beam-fade 0.4s ease-in-out 0.6s forwards;
-}
-
-@keyframes beam-fade {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(5);
-    filter: blur(3px);
-  }
+* {
+  box-sizing: border-box;
 }
