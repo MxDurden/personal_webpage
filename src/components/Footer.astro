@@ -1,21 +1,122 @@
 ---
 const year = new Date().getFullYear();
+const buildTime = new Date().toISOString().split('T')[0];
+const commitHash = import.meta.env.PUBLIC_COMMIT_HASH || 'dev';
 ---
 
 <footer class="w-full py-6 px-4 text-sm text-[#888] text-center font-mono">
-  <div class="max-w-7xl mx-auto border-t border-[#333] pt-4">
-    <p>&copy; {year} isaacquezada.dev — All rights reserved.</p>
-    <p class="mt-2">
-      Infra powered by 
-      <a 
-        href="https://magueylabs.com" 
-        class="text-green-400 font-semibold hover:underline" 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
+  <div class="max-w-7xl mx-auto border-t border-[#333] pt-4 flex flex-col items-center gap-1">
+
+    <!-- Línea 1 -->
+    <p class="text-xs">
+      &copy; {year} isaacquezada.dev — All rights reserved. &nbsp;
+      Infra by 
+      <a href="https://magueylabs.com" class="text-green-400 font-semibold hover:underline" target="_blank" rel="noopener noreferrer">
         MagueyLabs
-      </a>.  
-      This site is statically served, no trackers, no bullshit.
+      </a> — Served static, privacy-respecting & tracker-free.
+    </p>
+
+    <!-- Línea 2 -->
+    <p class="text-xs text-[#1f6fff]">
+      Build: <code>{commitHash}</code> — {buildTime}.
+      <a 
+        href="#"
+        onclick="document.getElementById('pgp-modal').classList.remove('hidden')"
+        class="ml-1 text-[#ccc] hover:text-green-400 underline"
+      >
+        View PGP key
+      </a>
     </p>
   </div>
 </footer>
+
+<!-- 🔐 Modal PGP Key -->
+<div id="pgp-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50">
+  <div class="bg-[#111] border border-[#333] p-4 rounded-xl max-w-2xl w-full mx-4 text-left text-xs font-mono text-[#ccc] relative">
+
+    <!-- Botón de cerrar aislado -->
+    <button 
+      onclick="document.getElementById('pgp-modal').classList.add('hidden')" 
+      class="absolute top-2 right-3 text-green-400 hover:text-red-500 text-base"
+    >
+      ✕
+    </button>
+
+    <!-- Controles de acción, separados del cierre -->
+    <div class="mb-3 mt-1 flex gap-4 justify-end text-lg pr-8">
+      <button 
+        onclick="navigator.clipboard.writeText(document.getElementById('pgp-key').innerText)" 
+        class="hover:text-green-400"
+        title="Copy to clipboard"
+      >
+        📋
+      </button>
+      <a 
+        href="/keys/public.asc" 
+        download 
+        class="hover:text-green-400"
+        title="Download key"
+      >
+        ⬇️
+      </a>
+    </div>
+
+    <pre id="pgp-key" class="overflow-auto max-h-96 whitespace-pre-wrap">
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+94t2jrCiXkTnu/Gyvau1pcg=
+=m6+C
+
+-----END PGP PUBLIC KEY BLOCK-----
+    </pre>
+  </div>
+</div>
+
+

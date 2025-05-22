@@ -1,0 +1,7 @@
+# security.txt for isaacquezada.dev
+
+Contact: mailto:info@isaacquezada.dev
+Encryption: https://isaacquezada.dev/keys/public.asc
+Preferred-Languages: en,es
+Canonical: https://isaacquezada.dev/.well-known/security.txt
+Expires: 2025-12-31T23:59:59.000Z
