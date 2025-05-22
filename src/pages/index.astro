@@ -1,56 +1,55 @@
----
-import BaseLayout from "../layouts/BaseLayout.astro";
+---  
+import BaseLayout from "../layouts/BaseLayout.astro";  
 ---
 
-<!-- MAIN CONTENT -->
 <BaseLayout>
-  <section class="min-h-screen flex flex-col justify-center">
-    <h1 class="text-3xl md:text-5xl font-bold text-accent mb-4 animate-fade-in">
-      ~$ isaac_quezada_.sh
+  <section class="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-16 gap-8 text-center">
+    
+    <!-- 🔹 TÍTULO -->
+    <h1 class="text-4xl md:text-6xl font-mono font-bold text-accent animate-fade-in">
+      isaac_quezada.sh
     </h1>
 
-    <p class="text-lg text-gray-400 mb-6 max-w-2xl animate-fade-in-up leading-relaxed">
-      I'm a DevOps engineer and cybersecurity specialist focused on automation, infrastructure hardening, and systems reliability. I build clean solutions, break weak ones, and don't waste time.
+    <!-- 🔹 DESCRIPCIÓN -->
+    <p class="text-lg text-gray-400 max-w-2xl leading-relaxed animate-fade-in-up">
+      I'm a DevOps engineer and cybersecurity specialist focused on automation, infrastructure hardening, and reliable systems. I build clean solutions, break weak ones, and move fast.
     </p>
 
-    <p class="text-md text-gray-500 mb-8 max-w-2xl animate-fade-in-up leading-relaxed">
-      This site is my digital workspace. You’ll find my skills, past projects, and contact links. If you're hiring, freelancing, or looking for real technical expertise — start below.
-    </p>
-
-    <!-- ✅ BOTONES -->
-    <div class="flex flex-wrap gap-4 animate-fade-in-up mb-8">
-      <a href="/cv.pdf" class="border border-accent text-accent px-4 py-2 hover:bg-accent hover:text-black transition">
+    <!-- 🔹 BOTONES -->
+    <div class="flex flex-wrap justify-center gap-4 animate-fade-in-up">
+      <a href="/cv.pdf" class="px-5 py-2 border border-accent text-accent hover:bg-accent hover:text-black transition">
         Download CV
       </a>
-      <a href="/projects" class="border border-gray-600 text-gray-300 px-4 py-2 hover:bg-white hover:text-black transition">
+      <a href="/projects" class="px-5 py-2 border border-accent text-accent hover:bg-accent hover:text-black transition">
         View Projects
       </a>
-      <a href="/contact" class="border border-gray-600 text-gray-300 px-4 py-2 hover:bg-white hover:text-black transition">
+      <a href="/contact" class="px-5 py-2 border border-accent text-accent hover:bg-accent hover:text-black transition">
         Contact Me
       </a>
     </div>
 
-    <!-- ✅ QUICK FACTS -->
-    <ul class="text-gray-400 mb-8 space-y-1 text-sm max-w-xl animate-fade-in-up">
-      <li> /  15+ years working with Linux, open-source, and infrastructure.</li>
-      <li> /  Strong background in automation, CI/CD, and system hardening.</li>
-      <li> /  Focused on security, performance, and clean, resilient deployments.</li>
-      <li> /  Freelance-friendly. Available for remote and contract work.</li>
-      <li> /  Experience with AWS, Docker, Kubernetes, Ansible, Terraform, GitOps.</li>
+    <!-- 🔹 QUICK FACTS -->
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-400 max-w-3xl animate-fade-in-up text-left">
+      <li>/ 15+ years working with Linux, open-source, and infrastructure.</li>
+      <li>/ Strong background in automation, CI/CD, and system hardening.</li>
+      <li>/ Focused on security, performance, and clean, resilient deployments.</li>
+      <li>/ Freelance-friendly. Available for remote and contract work.</li>
+      <li>/ Experience with AWS, Docker, Kubernetes, Ansible, Terraform, GitOps.</li>
     </ul>
 
-    <!-- ✅ TERMINAL FAKE -->
-    <div class="mt-4 max-w-fit border border-gray-700 rounded-md bg-[#0a0a0a] shadow-lg font-mono text-sm animate-fade-in-up">
+    <!-- 🔹 TERMINAL FAKE -->
+    <div class="w-full max-w-xl border border-gray-700 rounded-md bg-[#0a0a0a] shadow-lg font-mono text-sm animate-fade-in-up">
       <div class="flex items-center gap-2 px-3 py-2 border-b border-gray-700 bg-[#1a1a1a] rounded-t-md">
         <span class="h-3 w-3 rounded-full bg-red-500"></span>
         <span class="h-3 w-3 rounded-full bg-yellow-500"></span>
         <span class="h-3 w-3 rounded-full bg-green-500"></span>
         <span class="text-xs text-gray-400 ml-2">bytefuck@localhost</span>
       </div>
-      <div class="px-4 py-3 text-green-400">
+      <div class="px-4 py-4 text-green-400">
         <p class="mb-1">$ curl -O https://bytefuck.club/cv.pdf</p>
         <p class="text-gray-500"># direct download. no bullshit</p>
       </div>
     </div>
+    
   </section>
 </BaseLayout>
