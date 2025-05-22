@@ -1,0 +1,28 @@
+---
+const { name } = Astro.props;
+
+const icons = {
+  Ansible: "/icons/ansible.svg",
+  AWS: "/icons/aws.svg",
+  Azure: "/icons/azure.svg",
+  Docker: "/icons/docker.svg",
+  GCP: "/icons/gcp.svg",
+  GitHub: "/icons/github.svg",
+  Jenkins: "/icons/jenkins.svg",
+  Kubernetes: "/icons/kubernetes.svg",
+  Linux: "/icons/linux.svg",
+  Nginx: "/icons/nginx.svg",
+  PostgreSQL: "/icons/postgresql.svg",
+  Python: "/icons/python.svg",
+  Redis: "/icons/redis.svg",
+  Telegram: "/icons/telegram.svg",
+  Terraform: "/icons/terraform.svg",
+  WireGuard: "/icons/wireguard.svg",
+};
+
+const iconSrc = icons[name] || null;
+---
+
+{iconSrc && (
+  <img src={iconSrc} alt={name} title={name} class="w-4 h-4 inline-block align-text-bottom" />
+)}

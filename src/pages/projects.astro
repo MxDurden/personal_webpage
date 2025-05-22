@@ -1,40 +1,81 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: "MagueyGuard",
+    description: "VPN + DNS Firewall stack focused on privacy. Infra-as-code deployment.",
+    link: "#",
+    tags: ["WireGuard", "Pi-hole", "Terraform", "Ansible"]
+  },
+  {
+    title: "Odoo ERP Hardening",
+    description: "Security optimization for Odoo Community Edition with PostgreSQL tuning.",
+    link: "#",
+    tags: ["Odoo", "PostgreSQL", "Ansible"]
+  },
+  {
+    title: "Infra-as-Code Lab",
+    description: "CI/CD pipelines using Jenkins, Terraform and Linux for full-stack infra.",
+    link: "#",
+    tags: ["Terraform", "Ansible", "Jenkins", "Linux"]
+  },
+  {
+    title: "DevOps Toolbox",
+    description: "Pre-configured toolset with Nginx, Docker, Redis and GitHub Actions.",
+    link: "#",
+    tags: ["Docker", "GitHub", "Nginx", "Redis"]
+  },
+  {
+    title: "K8s Homelab",
+    description: "Self-hosted Kubernetes cluster with monitoring and GitOps setup.",
+    link: "#",
+    tags: ["Kubernetes", "GitHub", "Linux"]
+  },
+  {
+    title: "MagueyMirror",
+    description: "Debian package mirror using Nginx and rsync, running on hard-metal.",
+    link: "#",
+    tags: ["Linux", "Nginx"]
+  },
+  {
+    title: "Secure Bash Scripts",
+    description: "Audited shell scripts for backups, server hardening, and automation.",
+    link: "#",
+    tags: ["Linux", "Ansible"]
+  },
+  {
+    title: "Infra Templates",
+    description: "Reusable IaC blueprints for fast and secure deployments.",
+    link: "#",
+    tags: ["Terraform", "Ansible", "Docker"]
+  },
+  {
+    title: "Remote Uptime Monitor",
+    description: "Simple self-hosted uptime checker with Telegram alerts.",
+    link: "#",
+    tags: ["Linux", "Redis", "Telegram"]
+  }
+];
 ---
 
 <BaseLayout>
-  <section class="min-h-screen px-6 py-12 text-white">
-    <h1 class="text-4xl font-bold text-gray-100 mb-6">Projects</h1>
-    <p class="text-lg text-gray-400 mb-8 max-w-2xl">
-      A curated selection of infrastructure and security work focused on automation, hardening, and operational excellence.
+  <section class="px-6 py-12 space-y-6">
+    <h1 class="text-4xl font-bold text-[#e0e0e0]">Projects</h1>
+    <p class="text-lg text-[#bbbbbb] max-w-2xl">
+      These aren’t portfolio fillers — they’re systems I built to learn, break, secure, and automate. If it runs, scales, or defends itself, it’s here.
     </p>
 
     <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <div class="animate-fade-in-up">
-        <ProjectCard 
-          title="Infra-as-Code Lab"
-          description="Hybrid infrastructure automation using Terraform, Ansible and Jenkins. Designed for production-grade environments with strong security posture."
-          link="#"
-          icon="🧩"
+      {projects.map(project => (
+        <ProjectCard
+          title={project.title}
+          description={project.description}
+          link={project.link}
+          tags={project.tags}
         />
-      </div>
-      <div class="animate-fade-in-up">
-        <ProjectCard 
-          title="MagueyGuard"
-          description="Privacy-focused DNS firewall. WireGuard-powered VPN with Pi-hole as recursive resolver. Zero trackers, full control."
-          link="#"
-          icon="🔐"
-        />
-      </div>
-      <div class="animate-fade-in-up">
-        <ProjectCard 
-          title="Odoo ERP Hardening"
-          description="Production-grade security tuning for Odoo Community: automated backups, QR module audits, access control, and deployment isolation."
-          link="#"
-          icon="⚙️"
-        />
-      </div>
+      ))}
     </div>
   </section>
 </BaseLayout>
