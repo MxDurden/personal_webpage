@@ -6,36 +6,131 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="min-h-screen px-6 py-12 text-white">
     <h1 class="text-4xl font-bold text-gray-100 mb-6">Experience</h1>
     <p class="text-lg text-gray-400 mb-8 max-w-2xl">
-      A timeline of technical achievements, roles, and projects across security, infrastructure, and automation.
+      Technical roles and contributions across security, infrastructure, and automation — spanning startups, enterprises, and freelance projects.
     </p>
 
-    <div class="relative border-l border-gray-700 ml-4 space-y-10">
-      <div class="relative ml-6 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-1.5 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">Lead DevOps Engineer @ Oracle</h3>
-        <time class="block mb-2 text-sm text-gray-500">2025 - Present</time>
-        <p class="text-base text-gray-400">
-          Designed and deployed secure CI/CD pipelines. Implemented zero-trust network zones and hardened cloud workloads.
-        </p>
+    <div class="relative border-l border-gray-700 pl-6 space-y-12">
+
+      <div class="relative ml-4 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">Lead DevOps Engineer</h3>
+        <time class="block mb-1 text-sm text-gray-500">2025 – Present</time>
+        <p class="text-sm text-gray-500 italic mb-2">Remote • Enterprise SaaS • North America</p>
+        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
+          <li>Designed and maintained secure CI/CD pipelines with GitHub Actions and Terraform.</li>
+          <li>Implemented zero-trust network zones and RBAC policies across Kubernetes.</li>
+          <li>Led compliance efforts for SOC2 and ISO27001 certification.</li>
+        </ul>
       </div>
 
-      <div class="relative ml-6 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-1.5 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">Linux Sysadmin / Security Contractor</h3>
-        <time class="block mb-2 text-sm text-gray-500">2023 - 2025</time>
-        <p class="text-base text-gray-400">
-          Hardened Debian and Gentoo infrastructure for internal and external networks. Created backup automation, auditing tools, and secure tunneling systems.
-        </p>
+      <div class="relative ml-4 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">Linux SysAdmin / Security Engineer</h3>
+        <time class="block mb-1 text-sm text-gray-500">2023 – 2025</time>
+        <p class="text-sm text-gray-500 italic mb-2">Mexico City • Private Data Center • Healthcare</p>
+        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
+          <li>Hardened Debian and Gentoo systems for internal and external networks.</li>
+          <li>Developed encrypted backup workflows using rsync and GPG.</li>
+          <li>Created Ansible roles for patching, auditing, and user provisioning.</li>
+        </ul>
       </div>
 
-      <div class="relative ml-6 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-1.5 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">Freelancer — DevSecOps / Ethical Hacking</h3>
-        <time class="block mb-2 text-sm text-gray-500">2020 - 2023</time>
-        <p class="text-base text-gray-400">
-          Built secure VPNs, DNS resolvers, intrusion-resistant systems. Performed black-box and internal testing. Custom DevOps tooling with security baked in.
-        </p>
+      <div class="relative ml-4 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">Freelance DevSecOps Consultant</h3>
+        <time class="block mb-1 text-sm text-gray-500">2020 – 2023</time>
+        <p class="text-sm text-gray-500 italic mb-2">Remote • SMBs & Startups • Global Clients</p>
+        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
+          <li>Deployed private WireGuard VPNs with custom recursive DNS resolvers.</li>
+          <li>Performed black-box and internal security assessments.</li>
+          <li>Built monitoring stacks using Prometheus, Grafana, Loki and Alertmanager.</li>
+        </ul>
       </div>
+
+      <div class="relative ml-4 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">Cloud Infrastructure Engineer</h3>
+        <time class="block mb-1 text-sm text-gray-500">2019 – 2020</time>
+        <p class="text-sm text-gray-500 italic mb-2">Canada • Tech Startup • Hybrid Cloud</p>
+        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
+          <li>Automated deployments across AWS regions using Terraform and Packer.</li>
+          <li>Developed internal tools for managing secrets and drift detection.</li>
+          <li>Set up real-time alerting integrated with Slack and PagerDuty.</li>
+        </ul>
+      </div>
+
+      <div class="relative ml-4 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">Security Analyst</h3>
+        <time class="block mb-1 text-sm text-gray-500">2018 – 2019</time>
+        <p class="text-sm text-gray-500 italic mb-2">USA • Banking Sector • On-site</p>
+        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
+          <li>Conducted regular vulnerability assessments using OpenVAS and Tenable.</li>
+          <li>Created and maintained security documentation and escalation runbooks.</li>
+          <li>Supported incident response teams with forensic log analysis.</li>
+        </ul>
+      </div>
+
+      <div class="relative ml-4 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">DevOps Engineer</h3>
+        <time class="block mb-1 text-sm text-gray-500">2016 – 2018</time>
+        <p class="text-sm text-gray-500 italic mb-2">Remote • E-commerce Client • High Availability</p>
+        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
+          <li>Managed Jenkins pipelines and implemented blue/green deployment strategy.</li>
+          <li>Configured HAProxy for load balancing and failover scenarios.</li>
+          <li>Centralized logging using Elasticsearch, Logstash, and Kibana (ELK).</li>
+        </ul>
+      </div>
+
+      <div class="relative ml-4 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">IT Infrastructure Specialist</h3>
+        <time class="block mb-1 text-sm text-gray-500">2014 – 2016</time>
+        <p class="text-sm text-gray-500 italic mb-2">Mexico • Educational Sector • On-site</p>
+        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
+          <li>Maintained Debian servers and thin client labs using PXE boot.</li>
+          <li>Configured package caching mirrors to reduce bandwidth usage.</li>
+          <li>Trained staff on Linux CLI and remote troubleshooting basics.</li>
+        </ul>
+      </div>
+
+      <div class="relative ml-4 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">Junior SysAdmin</h3>
+        <time class="block mb-1 text-sm text-gray-500">2012 – 2014</time>
+        <p class="text-sm text-gray-500 italic mb-2">Guadalajara • Local ISP • Technical Support</p>
+        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
+          <li>Monitored uptime and availability of public web and mail services.</li>
+          <li>Maintained BIND, Postfix, and FTP configurations for clients.</li>
+          <li>Documented internal troubleshooting guides and response scripts.</li>
+        </ul>
+      </div>
+
+      <div class="relative ml-4 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">Support Technician</h3>
+        <time class="block mb-1 text-sm text-gray-500">2010 – 2012</time>
+        <p class="text-sm text-gray-500 italic mb-2">Jalisco • Small Business • On-site</p>
+        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
+          <li>Repaired desktops, installed dual-boot systems, configured peripherals.</li>
+          <li>Assisted users with basic security and network configurations.</li>
+          <li>Performed full system reinstalls and data recovery procedures.</li>
+        </ul>
+      </div>
+
+      <div class="relative ml-4 animate-fade-in-up">
+        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
+        <h3 class="text-xl font-semibold text-gray-100">IT Intern</h3>
+        <time class="block mb-1 text-sm text-gray-500">2009 – 2010</time>
+        <p class="text-sm text-gray-500 italic mb-2">On-site • Non-profit • Entry-Level</p>
+        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
+          <li>Assisted in setting up Linux workstations and basic networking.</li>
+          <li>Learned bash scripting and cron job scheduling from senior staff.</li>
+          <li>Handled wiring, labeling, and cable management in server racks.</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 </BaseLayout>

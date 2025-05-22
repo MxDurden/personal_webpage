@@ -4,16 +4,17 @@ const { pathname } = Astro.url;
 
 <nav class="w-full px-6 py-4 bg-black/80 backdrop-blur sticky top-0 z-50">
   <div class="max-w-7xl mx-auto flex justify-end items-center font-mono text-sm tracking-wide">
-    
-    <ul class="flex gap-6 text-gray-400">
-      <li><a href="/resume" class={pathname === '/resume' ? 'text-white font-semibold' : 'hover:text-white transition'}>Resume</a></li>
-      <li><a href="/projects" class={pathname === '/projects' ? 'text-white font-semibold' : 'hover:text-white transition'}>Projects</a></li>
-      <li><a href="/toolset" class={pathname === '/toolset' ? 'text-white font-semibold' : 'hover:text-white transition'}>Toolset</a></li>
-      <li><a href="/experience" class={pathname === '/experience' ? 'text-white font-semibold' : 'hover:text-white transition'}>Experience</a></li>
-      <li><a href="/blog" class={pathname === '/blog' ? 'text-white font-semibold' : 'hover:text-white transition'}>Blog</a></li>
-      <li><a href="/about" class={pathname === '/about' ? 'text-white font-semibold' : 'hover:text-white transition'}>About</a></li>
-      <li><a href="/contact" class={pathname === '/contact' ? 'text-white font-semibold' : 'hover:text-white transition'}>Contact</a></li>
-      <li><a href="/h4x0r" class={`transition duration-150 ease-in-out ${pathname === '/h4x0r' ? 'text-[#00ff99] font-bold animate-pulse' : 'hover:text-[#00ff99]'}`}>H4x0r</a></li>
+
+    <ul class="flex gap-6 text-gray-400 font-bold">
+      <li><a href="/" class={pathname === '/' ? 'text-white' : 'hover:text-white transition'}>/home</a></li>
+      <li><a href="/about" class={pathname === '/about' ? 'text-white' : 'hover:text-white transition'}>/about</a></li>
+      <li><a href="/resume" class={pathname === '/resume' ? 'text-white' : 'hover:text-white transition'}>/resume</a></li>
+      <li><a href="/experience" class={pathname === '/experience' ? 'text-white' : 'hover:text-white transition'}>/experience</a></li>
+      <li><a href="/projects" class={pathname === '/projects' ? 'text-white' : 'hover:text-white transition'}>/projects</a></li>
+      <li><a href="/toolset" class={pathname === '/toolset' ? 'text-white' : 'hover:text-white transition'}>/toolset</a></li>
+      <li><a href="/blog" class={pathname === '/blog' ? 'text-white' : 'hover:text-white transition'}>/blog</a></li>
+      <li><a href="/h4x0r" class={`transition duration-150 ease-in-out ${pathname === '/h4x0r' ? 'text-[#00ff99]' : 'hover:text-[#00ff99]'}`}>/h4x0r</a></li>
+      <li><a href="/contact" class={pathname === '/contact' ? 'text-white' : 'hover:text-white transition'}>/contact</a></li>
     </ul>
   </div>
 </nav>
