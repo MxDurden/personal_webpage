@@ -1,0 +1,58 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="min-h-screen flex flex-col bg-[#0a0a0a] text-[#e0e0e0] font-mono">
+    <Navbar />
+
+    <main class="flex-grow container mx-auto px-4 py-12 max-w-3xl">
+  <div class="flex items-center gap-6 mb-8">
+  <img
+    src="/images/avatar.png"
+    alt="Professional pixel avatar"
+    class="w-16 h-16 rounded-full border border-gray-700"
+    width="64"
+    height="64"
+  />
+  <div>
+    <h1 class="text-3xl font-bold">About</h1>
+    <p class="text-sm text-gray-400">Infrastructure & Cybersecurity Specialist</p>
+  </div>
+</div>
+
+  <p class="mb-4">
+    I'm a backend infrastructure and cybersecurity specialist focused on building secure, scalable, and automated systems. Over the past 20+ years, I’ve worked in enterprise environments, designing and maintaining mission-critical infrastructure for organizations of all sizes — including global corporations and high-demand production systems.
+  </p>
+
+  <p class="mb-4">
+    While I’m not a full-time freelancer, I do take on select consulting gigs, open source projects, and technical mentoring during my spare time. I’ve provided hands-on support and solutions in areas like server hardening, CI/CD automation, cloud migrations, and DevSecOps strategy.
+  </p>
+
+  <p class="mb-4">
+    I believe in building systems that are simple, robust, and secure by design — not as an afterthought. I favor minimalism, both in code and architecture, and I try to avoid overengineering whenever possible.
+  </p>
+
+  <p class="mb-4">
+    Most of the work showcased here is either a side-project or the result of solving a real-world problem that I found interesting or challenging enough to build from scratch.
+  </p>
+
+  <p class="mb-4">
+    This site is intentionally minimalist. No trackers. No bloat. Just signal.
+  </p>
+
+  <p>
+    If you're looking to collaborate, hire, or just talk about infrastructure, automation, or security — <a href="/contact" class="text-green-400 underline hover:text-green-300">feel free to reach out</a>.
+  </p>
+</main>
+
+
+    <Footer />
+  </body>
+</html>
