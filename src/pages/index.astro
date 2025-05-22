@@ -2,43 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<!-- CRT INTRO -->
-<div id="intro" class="intro-screen relative">
-  <span id="typed"></span><span class="cursor"></span>
-  <div id="beam"></div>
-  <audio id="crt-sound" src="/crt.mp3" preload="auto"></audio>
-</div>
-
-<script is:inline>
-  const text = "~$ welcome to bytefuck.club";
-  let i = 0;
-
-  const typedEl = document.getElementById("typed");
-  const intro = document.getElementById("intro");
-  const beam = document.getElementById("beam");
-  const sound = document.getElementById("crt-sound");
-
-  function typeChar() {
-    if (i < text.length) {
-      typedEl.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeChar, 80);
-    } else {
-      setTimeout(() => {
-        intro.classList.add("crt-off");
-        beam.style.opacity = 1;
-        sound.play();
-        setTimeout(() => {
-          intro.remove();
-        }, 1000); // apagón total
-      }, 1000); // pausa final
-    }
-  }
-
-  typeChar();
-</script>
-
-
 <!-- MAIN CONTENT -->
 <BaseLayout>
   <section class="min-h-screen flex flex-col justify-center">
