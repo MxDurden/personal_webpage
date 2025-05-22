@@ -3,36 +3,47 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <section class="flex-1 flex flex-col items-center justify-center px-6 md:px-12 py-8 gap-8 text-center">
+  <section class="flex-1 flex flex-col items-center justify-center px-6 md:px-12 py-20 gap-8 text-center">
 
-    <!-- CONTENIDO CENTRAL -->
-    <h1 class="text-4xl md:text-6xl font-mono font-bold text-[#cccccc] animate-fade-in">
-      isaac@quezada:~$
-    </h1>
+    <!-- CONTENIDO ESCALADO SOLO EN BLOQUES INTERNOS -->
+    <div class="transform scale-[0.9] origin-top flex flex-col items-center gap-8 w-full">
 
-    <p class="text-lg text-[#bbbbbb] max-w-2xl leading-relaxed animate-fade-in-up">
-      I'm a DevOps engineer and cybersecurity specialist focused on automation, infrastructure hardening, and reliable systems. I build clean solutions.
-    </p>
+      <!-- TÍTULO -->
+      <h1 class="text-4xl md:text-6xl font-mono font-bold text-[#cccccc] animate-fade-in">
+        isaac@quezada:~$
+      </h1>
 
-    <div class="flex flex-wrap justify-center gap-4 animate-fade-in-up">
-      <a href="/cv.pdf" class="px-5 py-2 border border-[#999] text-[#ccc] hover:bg-[#ccc] hover:text-black transition">
-        Download CV
-      </a>
-      <a href="/projects" class="px-5 py-2 border border-[#999] text-[#ccc] hover:bg-[#ccc] hover:text-black transition">
-        View Projects
-      </a>
-      <a href="/contact" class="px-5 py-2 border border-[#999] text-[#ccc] hover:bg-[#ccc] hover:text-black transition">
-        Contact Me
-      </a>
+      <!-- DESCRIPCIÓN -->
+      <p class="text-base text-[#bbbbbb] max-w-2xl leading-relaxed animate-fade-in-up mt-6">
+        I'm a DevOps engineer and cybersecurity specialist focused on automation, infrastructure hardening, and reliable systems. I build clean solutions.
+      </p>
+
+      <!-- BOTONES -->
+      <div class="flex flex-wrap justify-center gap-4 mt-10 animate-fade-in-up">
+        <a href="/cv.pdf" class="px-5 py-2 border border-[#999] text-[#ccc] hover:bg-[#ccc] hover:text-black transition font-mono text-sm">
+          >_ Download CV
+        </a>
+        <a href="/projects" class="px-5 py-2 border border-[#999] text-[#ccc] hover:bg-[#ccc] hover:text-black transition font-mono text-sm">
+          >>> View Projects
+        </a>
+        <a href="/contact" class="px-5 py-2 border border-[#999] text-[#ccc] hover:bg-[#ccc] hover:text-black transition font-mono text-sm">
+          ⎘ Contact Me
+        </a>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-sm text-[#aaaaaa] max-w-4xl mt-14 text-left animate-fade-in-up font-mono">
+        <ul class="space-y-2">
+          <li>// 20+ years working with Linux, open-source, and infrastructure.</li>
+          <li>// Focused on security, performance, and clean, resilient deployments.</li>
+          <li>// Experience with AWS, Docker, Kubernetes, Ansible, Terraform, GitOps.</li>
+        </ul>
+        <ul class="space-y-2">
+          <li>// Strong background in automation, CI/CD, and system hardening.</li>
+          <li>// Freelance-friendly. Available for remote and contract work.</li>
+        </ul>
+      </div>
+
     </div>
-
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 text-sm text-[#aaaaaa] max-w-3xl animate-fade-in-up text-left">
-      <li>//  20+ years working with Linux, open-source, and infrastructure.</li>
-      <li>//  Strong background in automation, CI/CD, and system hardening.</li>
-      <li>//  Focused on security, performance, and clean, resilient deployments.</li>
-      <li>//  Freelance-friendly. Available for remote and contract work.</li>
-      <li>//  Experience with AWS, Docker, Kubernetes, Ansible, Terraform, GitOps.</li>
-    </ul>
-
   </section>
 </BaseLayout>
