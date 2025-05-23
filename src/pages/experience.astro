@@ -11,126 +11,280 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div class="relative border-l border-gray-700 pl-6 space-y-12">
 
-      <div class="relative ml-4 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">Lead DevOps Engineer</h3>
-        <time class="block mb-1 text-sm text-gray-500">2025 – Present</time>
-        <p class="text-sm text-gray-500 italic mb-2">Remote • Enterprise SaaS • North America</p>
-        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
-          <li>Designed and maintained secure CI/CD pipelines with GitHub Actions and Terraform.</li>
-          <li>Implemented zero-trust network zones and RBAC policies across Kubernetes.</li>
-          <li>Led compliance efforts for SOC2 and ISO27001 certification.</li>
-        </ul>
-      </div>
 
-      <div class="relative ml-4 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">Linux SysAdmin / Security Engineer</h3>
-        <time class="block mb-1 text-sm text-gray-500">2023 – 2025</time>
-        <p class="text-sm text-gray-500 italic mb-2">Mexico City • Private Data Center • Healthcare</p>
-        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
-          <li>Hardened Debian and Gentoo systems for internal and external networks.</li>
-          <li>Developed encrypted backup workflows using rsync and GPG.</li>
-          <li>Created Ansible roles for patching, auditing, and user provisioning.</li>
-        </ul>
-      </div>
+<div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
+  <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
 
-      <div class="relative ml-4 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">Freelance DevSecOps Consultant</h3>
-        <time class="block mb-1 text-sm text-gray-500">2020 – 2023</time>
-        <p class="text-sm text-gray-500 italic mb-2">Remote • SMBs & Startups • Global Clients</p>
-        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
-          <li>Deployed private WireGuard VPNs with custom recursive DNS resolvers.</li>
-          <li>Performed black-box and internal security assessments.</li>
-          <li>Built monitoring stacks using Prometheus, Grafana, Loki and Alertmanager.</li>
-        </ul>
-      </div>
+  <button @click="open = !open" class="text-left w-full group focus:outline-none">
+    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+      DevOps / Cloud Infrastructure Engineer
+    </h3>
+    <time class="block mb-1 text-sm text-gray-500">2021 – 2023</time>
+    <p class="text-sm text-gray-500 italic mb-2">Enterprise Consulting • Global Clients in Finance & Aerospace</p>
+  </button>
 
-      <div class="relative ml-4 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">Cloud Infrastructure Engineer</h3>
-        <time class="block mb-1 text-sm text-gray-500">2019 – 2020</time>
-        <p class="text-sm text-gray-500 italic mb-2">Canada • Tech Startup • Hybrid Cloud</p>
-        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
-          <li>Automated deployments across AWS regions using Terraform and Packer.</li>
-          <li>Developed internal tools for managing secrets and drift detection.</li>
-          <li>Set up real-time alerting integrated with Slack and PagerDuty.</li>
-        </ul>
-      </div>
+  <div x-show="open" x-transition class="overflow-hidden mt-2">
+    <ul class="space-y-1">
+      <template x-for="(item, index) in [
+        'Supported infrastructure and DevOps workflows across multiple clients including USAA, Santander, and Bombardier.',
+        'Performed large-scale application and infrastructure migrations between data centers and cloud environments.',
+        'Patched and hardened Linux and Windows servers, remediating vulnerabilities and ensuring compliance baselines.',
+        'Utilized Ansible for OS upgrades, application deployment automation, and system configuration management.',
+        'Managed DNS, load balancers, certificates, and firewall rules as part of application lifecycle support.',
+        'Worked with CI/CD pipelines using Git, Jenkins, and internal automation platforms for production releases.',
+        'Collaborated with security teams to enforce access policies, audit logs, and implement monitoring rules.',
+        'Handled troubleshooting of distributed systems in hybrid environments (on-prem + AWS).',
+        'Documented operational runbooks and supported SRE workflows for reliability and incident response.',
+        'Assisted in the development and implementation of infrastructure-as-code strategies across client stacks.'
+      ]" :key="index">
+        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
+            :style="'animation-delay: ' + (index * 100) + 'ms'">
+          <span x-text="item"></span>
+        </li>
+      </template>
+    </ul>
+  </div>
+</div>
 
-      <div class="relative ml-4 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">Security Analyst</h3>
-        <time class="block mb-1 text-sm text-gray-500">2018 – 2019</time>
-        <p class="text-sm text-gray-500 italic mb-2">USA • Banking Sector • On-site</p>
-        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
-          <li>Conducted regular vulnerability assessments using OpenVAS and Tenable.</li>
-          <li>Created and maintained security documentation and escalation runbooks.</li>
-          <li>Supported incident response teams with forensic log analysis.</li>
-        </ul>
-      </div>
 
-      <div class="relative ml-4 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">DevOps Engineer</h3>
-        <time class="block mb-1 text-sm text-gray-500">2016 – 2018</time>
-        <p class="text-sm text-gray-500 italic mb-2">Remote • E-commerce Client • High Availability</p>
-        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
-          <li>Managed Jenkins pipelines and implemented blue/green deployment strategy.</li>
-          <li>Configured HAProxy for load balancing and failover scenarios.</li>
-          <li>Centralized logging using Elasticsearch, Logstash, and Kibana (ELK).</li>
-        </ul>
-      </div>
+<div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
+  <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
 
-      <div class="relative ml-4 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">IT Infrastructure Specialist</h3>
-        <time class="block mb-1 text-sm text-gray-500">2014 – 2016</time>
-        <p class="text-sm text-gray-500 italic mb-2">Mexico • Educational Sector • On-site</p>
-        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
-          <li>Maintained Debian servers and thin client labs using PXE boot.</li>
-          <li>Configured package caching mirrors to reduce bandwidth usage.</li>
-          <li>Trained staff on Linux CLI and remote troubleshooting basics.</li>
-        </ul>
-      </div>
+  <button @click="open = !open" class="text-left w-full group focus:outline-none">
+    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+      Global IT Operations Manager
+    </h3>
+    <time class="block mb-1 text-sm text-gray-500">2019 – 2021</time>
+    <p class="text-sm text-gray-500 italic mb-2">India • US • UK • Mexico</p>
+  </button>
 
-      <div class="relative ml-4 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">Junior SysAdmin</h3>
-        <time class="block mb-1 text-sm text-gray-500">2012 – 2014</time>
-        <p class="text-sm text-gray-500 italic mb-2">Guadalajara • Local ISP • Technical Support</p>
-        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
-          <li>Monitored uptime and availability of public web and mail services.</li>
-          <li>Maintained BIND, Postfix, and FTP configurations for clients.</li>
-          <li>Documented internal troubleshooting guides and response scripts.</li>
-        </ul>
-      </div>
+  <div x-show="open" x-transition class="overflow-hidden mt-2">
+    <ul class="space-y-1">
+      <template x-for="(item, index) in [
+        'Served as primary IT contact between India, Mexico, the US, and UK, coordinating infrastructure and compliance.',
+        'Led internal IT team and managed global infrastructure supporting call center operations and backend services.',
+        'Deployed and maintained hybrid environments with on-premise servers and cloud instances across AWS and GCP.',
+        'Built and managed Galera clusters for high availability MySQL replication across regions.',
+        'Implemented network segmentation, VPN tunnels, firewall rules, and Squid-based web filtering across offices.',
+        'Set up and maintained PBX systems, internal VoIP infrastructure, and LAMP-stack application servers.',
+        'Automated server provisioning and configuration tasks using Python and shell scripting.',
+        'Coordinated development of an internal business support app, integrating DevOps practices for CI/CD pipelines.',
+        'Oversaw virtualized infrastructure using Proxmox and KVM for internal services and staging environments.',
+        'Handled procurement, vendor contracts, and housing of production servers in external datacenters.',
+        'Maintained documentation, internal wikis, and cost reports for infrastructure and development ops.'
+      ]" :key="index">
+        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
+            :style="'animation-delay: ' + (index * 100) + 'ms'">
+          <span x-text="item"></span>
+        </li>
+      </template>
+    </ul>
+  </div>
+</div>
 
-      <div class="relative ml-4 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">Support Technician</h3>
-        <time class="block mb-1 text-sm text-gray-500">2010 – 2012</time>
-        <p class="text-sm text-gray-500 italic mb-2">Jalisco • Small Business • On-site</p>
-        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
-          <li>Repaired desktops, installed dual-boot systems, configured peripherals.</li>
-          <li>Assisted users with basic security and network configurations.</li>
-          <li>Performed full system reinstalls and data recovery procedures.</li>
-        </ul>
-      </div>
 
-      <div class="relative ml-4 animate-fade-in-up">
-        <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-4 top-2 border-2 border-black"></div>
-        <h3 class="text-xl font-semibold text-gray-100">IT Intern</h3>
-        <time class="block mb-1 text-sm text-gray-500">2009 – 2010</time>
-        <p class="text-sm text-gray-500 italic mb-2">On-site • Non-profit • Entry-Level</p>
-        <ul class="list-disc list-inside text-gray-400 text-base space-y-1">
-          <li>Assisted in setting up Linux workstations and basic networking.</li>
-          <li>Learned bash scripting and cron job scheduling from senior staff.</li>
-          <li>Handled wiring, labeling, and cable management in server racks.</li>
-        </ul>
-      </div>
+<div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
+  <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
 
-    </div>
+  <button @click="open = !open" class="text-left w-full group focus:outline-none">
+    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+      IT Manager – Infrastructure & Security
+    </h3>
+    <time class="block mb-1 text-sm text-gray-500">2017 – 2019</time>
+    <p class="text-sm text-gray-500 italic mb-2">National Logistics Company • Mexico</p>
+  </button>
+
+  <div x-show="open" x-transition class="overflow-hidden mt-2">
+    <ul class="space-y-1">
+      <template x-for="(item, index) in [
+        'Led IT operations for a nationwide logistics firm with remote offices in every major port city.',
+        'Managed a five-person internal team and coordinated external developers and system implementers.',
+        'Oversaw hybrid infrastructure combining on-premise servers and AWS cloud services for critical applications.',
+        'Maintained web servers, mail services, VPN access, and internal documentation tools including a self-hosted wiki.',
+        'Implemented VLAN segmentation, firewall rules, Squid-based web filtering, and internal file-sharing protocols.',
+        'Monitored infrastructure with Nagios and maintained PostgreSQL and MySQL databases across environments.',
+        'Drove company-wide cybersecurity initiatives including endpoint protection, user training, and access control audits.',
+        'Managed Odoo ERP deployments covering inventory, fleet management, HR, accounting, and procurement.',
+        'Supervised the development of a mobile internal app (iOS/Android), coordinating with external dev teams.',
+        'Handled hardware lifecycle management, vendor relations, internet service procurement, and network upgrades.'
+      ]" :key="index">
+        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
+            :style="'animation-delay: ' + (index * 100) + 'ms'">
+          <span x-text="item"></span>
+        </li>
+      </template>
+    </ul>
+  </div>
+</div>
+
+
+<div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
+  <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
+
+  <button @click="open = !open" class="text-left w-full group focus:outline-none">
+    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+      IT Manager
+    </h3>
+    <time class="block mb-1 text-sm text-gray-500">2015 – 2017</time>
+    <p class="text-sm text-gray-500 italic mb-2">National Civil Engineering & Construction Firm • Mexico</p>
+  </button>
+
+  <div x-show="open" x-transition class="overflow-hidden mt-2">
+    <ul class="space-y-1">
+      <template x-for="(item, index) in [
+        'Managed the entire IT department, overseeing network administration, cybersecurity, cloud systems, and end-user support.',
+        'Implemented and maintained firewall rules, web filtering, and bandwidth controls to secure network traffic.',
+        'Led infrastructure upgrades, including acquisition and deployment of new servers, workstations, and network equipment.',
+        'Deployed and managed virtualized environments for database, application, and web hosting services.',
+        'Supervised external developers and service providers for email hosting, ERP support, and custom software integrations.',
+        'Implemented Odoo ERP modules for inventory, HR, fleet management, and procurement across departments.',
+        'Administered Active Directory, VPN access, user provisioning, and access control policies.',
+        'Ensured data integrity through endpoint protection, secure backups, and internal access controls.',
+        'Coordinated software licensing, asset inventory, and IT vendor contracts across regional offices.'
+      ]" :key="index">
+        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
+            :style="'animation-delay: ' + (index * 100) + 'ms'">
+          <span x-text="item"></span>
+        </li>
+      </template>
+    </ul>
+  </div>
+</div>
+
+
+
+<div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
+  <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
+
+  <button @click="open = !open" class="text-left w-full group focus:outline-none">
+    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+      Head of IT – Western Region
+    </h3>
+    <time class="block mb-1 text-sm text-gray-500">2013 – 2015</time>
+    <p class="text-sm text-gray-500 italic mb-2">National Auto Parts Distributor • Guadalajara, Mexico</p>
+  </button>
+
+  <div x-show="open" x-transition class="overflow-hidden mt-2">
+    <ul class="space-y-1">
+      <template x-for="(item, index) in [
+        'Led IT operations for the Western region of a nationwide auto parts distributor, managing infrastructure across multiple branches.',
+        'Maintained Linux-based environments (Slackware) for servers and workstations, including hardware provisioning and OS installations.',
+        'Managed user support, access control, and Samba-based file sharing across all regional offices.',
+        'Implemented Squid proxy rules and firewall configurations to control web access and protect internal networks.',
+        'Monitored and maintained VPN connectivity between regional branches and headquarters in Culiacán.',
+        'Provided remote and on-site support for connectivity, system issues, and hardware replacements.',
+        'Coordinated vendor relationships and handled procurement and infrastructure upgrades for all branches in the region.'
+      ]" :key="index">
+        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
+            :style="'animation-delay: ' + (index * 100) + 'ms'">
+          <span x-text="item"></span>
+        </li>
+      </template>
+    </ul>
+  </div>
+</div>
+
+
+
+ <div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
+  <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
+
+  <button @click="open = !open" class="text-left w-full group focus:outline-none">
+    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+      Linux Systems Engineer
+    </h3>
+    <time class="block mb-1 text-sm text-gray-500">2011 – 2013</time>
+    <p class="text-sm text-gray-500 italic mb-2">Jalisco • Animation Studios</p>
+  </button>
+
+  <div x-show="open" x-transition class="overflow-hidden mt-2">
+    <ul class="space-y-1">
+      <template x-for="(item, index) in [
+        'Provided Linux-based infrastructure support for animation and rendering pipelines in production environments.',
+        'Installed and configured services for internal file sharing, job queuing, and collaborative workflows.',
+        'Administered the rendering server queue, ensuring optimal utilization and troubleshooting failed jobs.',
+        'Built and deployed render farms using Maya and Blender; set up headless nodes for cluster-based workloads.',
+        'Installed and configured drawing tablets, proprietary drivers, and Wacom devices on Linux workstations.',
+        'Deployed and managed Xen-based virtualization, including network bridges, guest configuration, and access control.',
+        'Maintained and supported remote and on-site servers across multiple departments and animation teams.'
+      ]" :key="index">
+        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
+            :style="'animation-delay: ' + (index * 100) + 'ms'">
+          <span x-text="item"></span>
+        </li>
+      </template>
+    </ul>
+  </div>
+</div>
+
+
+<div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
+  <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
+
+  <button @click="open = !open" class="text-left w-full group focus:outline-none">
+    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+      Independent IT Consultant & Small Business Owner
+    </h3>
+    <time class="block mb-1 text-sm text-gray-500">2007 – 2011</time>
+    <p class="text-sm text-gray-500 italic mb-2">Mexico • Government & Education Clients</p>
+  </button>
+
+  <div x-show="open" x-transition class="overflow-hidden mt-2">
+    <ul class="space-y-1">
+      <template x-for="(item, index) in [
+        'Founded and operated a small IT services business, delivering full-stack technical support and consulting.',
+        'Led structured cabling and LAN deployment projects for universities and municipal government offices.',
+        'Managed end-to-end procurement, installation, and configuration of servers, switches, routers, and firewalls.',
+        'Oversaw bidding and execution of government contracts, ensuring timely delivery and compliance.',
+        'Provided on-site support for desktops, printers, and networking hardware in high-demand environments.',
+        'Sold and configured computer systems, peripherals, and office technology solutions for SMB clients.',
+        'Deployed VPN solutions and internal file-sharing infrastructure tailored to client needs.'
+      ]" :key="index">
+        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
+            :style="'animation-delay: ' + (index * 100) + 'ms'">
+          <span x-text="item"></span>
+        </li>
+      </template>
+    </ul>
+  </div>
+</div>
+
+
+ <div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
+  <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
+
+  <button @click="open = !open" class="text-left w-full group focus:outline-none">
+    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+      IT Support Technician
+    </h3>
+    <time class="block mb-1 text-sm text-gray-500">2003 – 2007</time>
+    <p class="text-sm text-gray-500 italic mb-2">On-site • Small Business • Jalisco</p>
+  </button>
+
+  <div x-show="open" x-transition class="overflow-hidden mt-2">
+    <ul class="space-y-1">
+      <template x-for="(item, index) in [
+        'Provided on-site IT support for small and mid-sized businesses, troubleshooting hardware and network issues.',
+        'Assembled and configured desktop PCs, installed operating systems, and performed routine maintenance tasks.',
+        'Deployed and maintained local area networks (LAN), including cabling, shared folders, and network printers.',
+        'Managed user access and desktop policies via Active Directory and Group Policy Objects (GPO).',
+        'Installed and updated antivirus solutions; educated end-users on basic cybersecurity hygiene.',
+        'Handled system reinstalls, data backups, and peripheral setup for printers, scanners, and routers.'
+      ]" :key="index">
+        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
+            :style="'animation-delay: ' + (index * 100) + 'ms'">
+          <span x-text="item"></span>
+        </li>
+      </template>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!--  BLOQUE DE CIERRE -->
+    <div class="mt-16 text-center text-gray-500 text-sm italic">
+  <p>More details and project breakdowns available on request.</p>
+  <p class="mt-2">Let’s build something secure and scalable — <a href="/contact" class="text-accent underline hover:text-white">get in touch</a>.</p>
+</div>
   </section>
 </BaseLayout>

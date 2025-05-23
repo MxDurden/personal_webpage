@@ -9,20 +9,21 @@ import Footer from "../components/Footer.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <!-- ✅ GLOBAL SEO META -->
+    <!--  GLOBAL SEO META -->
     <title>Isaac Quezada — DevOps Engineer & Cybersecurity Consultant</title>
     <meta name="description" content="DevOps and cybersecurity specialist focused on automation, cloud infrastructure, and secure systems. I help teams ship secure and scalable software." />
     <meta name="keywords" content="DevOps engineer, cybersecurity, Linux, infrastructure consultant, secure automation, cloud architecture, freelance DevOps, Ansible, Terraform, CI/CD" />
 
-    <!-- 🌐 Open Graph -->
+    <!--  Open Graph -->
     <meta property="og:title" content="Isaac Quezada — DevOps & Cybersecurity Specialist" />
     <meta property="og:description" content="Helping teams and companies design secure infrastructure and automation workflows." />
     <meta property="og:image" content="https://isaacquezada.dev/images/og-banner.png" />
     <meta property="og:url" content="https://isaacquezada.dev" />
     <meta property="og:type" content="website" />
 
-    <!-- 🧠 Structured Data (JSON-LD) -->
+    <!--  Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -42,19 +43,19 @@ import Footer from "../components/Footer.astro";
 
   <body class="min-h-screen flex flex-col bg-[#0a0a0a] text-[#e0e0e0] font-mono animate-fade-in">
     
-    <!-- 🧱 CONTENIDO PRINCIPAL -->
+    <!-- Header -->
     <header class="shadow-sm animate-slide-down bg-black/80 backdrop-blur z-10 relative">
       <div class="max-w-7xl mx-auto px-4">
         <Navbar />
       </div>
     </header>
 
-    <main class="flex-1 z-10 relative">
-      <div class="max-w-7xl mx-auto px-4">
-        <slot />
-      </div>
+    <!-- Main content -->
+    <main class="flex-1 z-10 relative px-4 max-w-7xl mx-auto w-full">
+      <slot />
     </main>
 
+    <!-- Footer -->
     <Footer />
   </body>
 </html>

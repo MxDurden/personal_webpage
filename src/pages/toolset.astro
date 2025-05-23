@@ -9,47 +9,84 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       Tools and technologies I use to automate, secure, and manage infrastructure.
     </p>
 
-    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
-        <img src="/logos/python.svg" alt="Python" class="w-12 h-12 mx-auto mb-3" />
-        <p class="text-lg font-semibold text-gray-100">Python</p>
-        <p class="text-sm text-gray-400">Scripting, automation.</p>
-      </div>
-      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
-        <img src="/logos/docker.svg" alt="Docker" class="w-12 h-12 mx-auto mb-3" />
-        <p class="text-lg font-semibold text-gray-100">Docker</p>
-        <p class="text-sm text-gray-400">Containers for everything, isolated and fast</p>
-      </div>
-      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
-        <img src="/logos/ansible.svg" alt="Ansible" class="w-12 h-12 mx-auto mb-3" />
-        <p class="text-lg font-semibold text-gray-100">Ansible</p>
-        <p class="text-sm text-gray-400">Infra config & deployment automation</p>
-      </div>
-      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
-        <img src="/logos/terraform.svg" alt="Terraform" class="w-12 h-12 mx-auto mb-3" />
-        <p class="text-lg font-semibold text-gray-100">Terraform</p>
-        <p class="text-sm text-gray-400">IaC for cloud and on-premise infra</p>
-      </div>
-      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
-        <img src="/logos/wireguard.svg" alt="Wireguard" class="w-12 h-12 mx-auto mb-3" />
-        <p class="text-lg font-semibold text-gray-100">WireGuard</p>
-        <p class="text-sm text-gray-400">VPN tunnels for secure infra zones</p>
-      </div>
-      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
-        <img src="/logos/aws.svg" alt="AWS" class="w-12 h-12 mx-auto mb-3" />
-        <p class="text-lg font-semibold text-gray-100">AWS</p>
-        <p class="text-sm text-gray-400">Cloud infra, EC2, S3, IAM, CloudWatch</p>
-      </div>
-      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
-        <img src="/logos/jenkins.svg" alt="Jenkins" class="w-12 h-12 mx-auto mb-3" />
-        <p class="text-lg font-semibold text-gray-100">Jenkins</p>
-        <p class="text-sm text-gray-400">Pipelines, test/deploy flows</p>
-      </div>
-      <div class="animate-fade-in-up bg-gray-900 border border-gray-700 p-4 rounded-lg text-center hover:shadow-green-500/20 transition hover:scale-105">
-        <img src="/logos/linux.svg" alt="Linux" class="w-12 h-12 mx-auto mb-3" />
-        <p class="text-lg font-semibold text-gray-100">Linux</p>
-        <p class="text-sm text-gray-400">Gentoo, Debian, server hardening</p>
-      </div>
+    <div class="mb-6 flex flex-wrap gap-3">
+      <button class="bg-gray-800 text-sm px-4 py-1 rounded hover:bg-green-600" onclick="filterTools('all')">All</button>
+      <button class="bg-gray-800 text-sm px-4 py-1 rounded hover:bg-blue-600" onclick="filterTools('automation')">Automation</button>
+      <button class="bg-gray-800 text-sm px-4 py-1 rounded hover:bg-yellow-600" onclick="filterTools('containers')">Containers</button>
+      <button class="bg-gray-800 text-sm px-4 py-1 rounded hover:bg-cyan-600" onclick="filterTools('cloud')">Cloud</button>
+      <button class="bg-gray-800 text-sm px-4 py-1 rounded hover:bg-purple-600" onclick="filterTools('monitoring')">Monitoring</button>
+      <button class="bg-gray-800 text-sm px-4 py-1 rounded hover:bg-pink-600" onclick="filterTools('security')">Security</button>
+      <button class="bg-gray-800 text-sm px-4 py-1 rounded hover:bg-red-600" onclick="filterTools('databases')">Databases</button>
+      <button class="bg-gray-800 text-sm px-4 py-1 rounded hover:bg-lime-600" onclick="filterTools('versioning')">Versioning</button>
+      <button class="bg-gray-800 text-sm px-4 py-1 rounded hover:bg-orange-600" onclick="filterTools('scripting')">Scripting</button>
+      <button class="bg-gray-800 text-sm px-4 py-1 rounded hover:bg-teal-600" onclick="filterTools('infrastructure')">Infrastructure</button>
+      <button class="bg-gray-800 text-sm px-4 py-1 rounded hover:bg-amber-600" onclick="filterTools('operating-systems')">Operating Systems</button>
+    </div>
+
+    <div id="toolGrid" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <!-- Tool cards go here -->
     </div>
   </section>
+
+  <script>
+    const tools = [
+      { name: 'python', category: 'scripting', desc: 'Scripting, automation' },
+      { name: 'bash', category: 'scripting', desc: 'Shell scripting and automation' },
+      { name: 'docker', category: 'containers', desc: 'Containers for everything, isolated and fast' },
+      { name: 'kubernetes', category: 'containers', desc: 'Container orchestration' },
+      { name: 'ansible', category: 'automation', desc: 'Infra config & deployment automation' },
+      { name: 'terraform', category: 'automation', desc: 'IaC for cloud and on-premise infra' },
+      { name: 'jenkins', category: 'automation', desc: 'Pipelines, test/deploy flows' },
+      { name: 'aws', category: 'cloud', desc: 'Cloud infra, EC2, S3, IAM, CloudWatch' },
+      { name: 'gcp', category: 'cloud', desc: 'Cloud infra: GCE, GKE, storage and auth' },
+      { name: 'azure', category: 'cloud', desc: 'Azure services and pipelines' },
+      { name: 'grafana', category: 'monitoring', desc: 'Monitoring dashboards' },
+      { name: 'prometheus', category: 'monitoring', desc: 'Metrics and monitoring' },
+      { name: 'telegram', category: 'monitoring', desc: 'Bot alerts and automation' },
+      { name: 'wireguard', category: 'security', desc: 'VPN tunnels for secure infra zones' },
+      { name: 'snort', category: 'security', desc: 'Network intrusion detection' },
+      { name: 'openbsd', category: 'operating-systems', desc: 'Security-focused Unix environment' },
+      { name: 'redis', category: 'databases', desc: 'In-memory data store' },
+      { name: 'postgresql', category: 'databases', desc: 'Robust relational DBMS' },
+      { name: 'elasticsearch', category: 'databases', desc: 'Search and analytics engine' },
+      { name: 'gitea', category: 'versioning', desc: 'Self-hosted Git service' },
+      { name: 'github', category: 'versioning', desc: 'Code hosting and CI/CD integration' },
+      { name: 'nginx', category: 'infrastructure', desc: 'Reverse proxy and web server' },
+      { name: 'apache', category: 'infrastructure', desc: 'Classic web server and proxy' },
+      { name: 'qemu', category: 'infrastructure', desc: 'Virtualization and VM management' },
+      { name: 'linux', category: 'operating-systems', desc: 'Gentoo, Debian, server hardening' },
+      { name: 'debian', category: 'operating-systems', desc: 'Stable and reliable for production' },
+      { name: 'gentoo', category: 'operating-systems', desc: 'Extreme customization and performance' },
+      { name: 'freebsd', category: 'operating-systems', desc: 'ZFS, jails, stability' },
+      { name: 'windows', category: 'operating-systems', desc: 'Interoperability and PowerShell scripting' }
+    ];
+
+    const grid = document.getElementById('toolGrid');
+
+    function renderTools(category = 'all') {
+      grid.innerHTML = '';
+      let i = 0;
+      tools.forEach(tool => {
+        if (category === 'all' || tool.category === category) {
+          const card = document.createElement('div');
+          card.className = `animate-fade-in-up bg-gray-900 border border-gray-700 p-6 rounded-lg text-center hover:shadow-green-500/10 hover:-translate-y-1 transition duration-200`;
+          card.style.animationDelay = `${0.1 * i}s`;
+          card.innerHTML = `
+            <img src="/logos/${tool.name}.svg" alt="${tool.name}" title="${tool.name}" class="w-12 h-12 mx-auto mb-3" />
+            <p class="text-lg font-semibold text-gray-100">${tool.name.charAt(0).toUpperCase() + tool.name.slice(1)}</p>
+            <p class="text-sm text-gray-400">${tool.desc}</p>
+          `;
+          grid.appendChild(card);
+          i++;
+        }
+      });
+    }
+
+    function filterTools(cat) {
+      renderTools(cat);
+    }
+
+    window.filterTools = filterTools;
+    window.addEventListener('DOMContentLoaded', () => renderTools());
+  </script>
 </BaseLayout>
