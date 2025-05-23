@@ -1,7 +1,8 @@
 ---
 const year = new Date().getFullYear();
 const buildTime = new Date().toISOString().split('T')[0];
-const commitHash = import.meta.env.PUBLIC_COMMIT_HASH || 'dev';
+const isProd = import.meta.env.MODE === 'production';
+const commitHash = isProd ? import.meta.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) : null;
 ---
 
 <footer class="w-full py-6 px-4 text-sm text-[#888] text-center font-mono">
@@ -17,16 +18,18 @@ const commitHash = import.meta.env.PUBLIC_COMMIT_HASH || 'dev';
     </p>
 
     <!-- Línea 2 -->
-    <p class="text-xs text-[#1f6fff]">
-      Build: <code>{commitHash}</code> — {buildTime}.
-      <a 
-        href="#"
-        onclick="document.getElementById('pgp-modal').classList.remove('hidden')"
-        class="ml-1 text-[#ccc] hover:text-green-400 underline"
-      >
-        View PGP key
-      </a>
-    </p>
+    {isProd && commitHash && (
+      <p class="text-xs text-[#1f6fff]">
+        Build: <code>{commitHash}</code> — {buildTime}.
+        <a 
+          href="#"
+          onclick="document.getElementById('pgp-modal').classList.remove('hidden')"
+          class="ml-1 text-[#ccc] hover:text-green-400 underline"
+        >
+          View PGP key
+        </a>
+      </p>
+    )}
   </div>
 </footer>
 
@@ -34,7 +37,7 @@ const commitHash = import.meta.env.PUBLIC_COMMIT_HASH || 'dev';
 <div id="pgp-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50">
   <div class="bg-[#111] border border-[#333] p-4 rounded-xl max-w-2xl w-full mx-4 text-left text-xs font-mono text-[#ccc] relative">
 
-    <!-- Botón de cerrar aislado -->
+    <!-- Botón de cerrar -->
     <button 
       onclick="document.getElementById('pgp-modal').classList.add('hidden')" 
       class="absolute top-2 right-3 text-green-400 hover:text-red-500 text-base"
@@ -42,7 +45,7 @@ const commitHash = import.meta.env.PUBLIC_COMMIT_HASH || 'dev';
       ✕
     </button>
 
-    <!-- Controles de acción, separados del cierre -->
+    <!-- Botones de acción -->
     <div class="mb-3 mt-1 flex gap-4 justify-end text-lg pr-8">
       <button 
         onclick="navigator.clipboard.writeText(document.getElementById('pgp-key').innerText)" 
@@ -99,24 +102,7 @@ rbBncsnE8di63aNjwn+AsWAwKCNFCHUFUOmz+T8S+y/X0LbPKN4xU/XQGOE9PfBY
 49DmDNt1WLAyKRN+IpLcKOWlP2l0f6TRV0IF7Vr2p/M0uvjNaQ++BOATOpZF4bZs
 sxrwPqoXLaENTHh9w+64ScOYv1mEnsuxSUB+urHut6p+WiMOeyM/R+b1UKy9uNED
 1yE3yAZeUErDFJHjo69E03MToAawP/MQLcJQyo4oPsBUUHvNI2Siy0e9MRN68Dsy
-/fJjoDxHKbPwNjxPjwARAQABiQI8BBgBCgAmFiEED0uvMs6BjSAfVTx/VCyJv05r
-aoQFAmgvs9YCGwwFCQPCZwAACgkQVCyJv05raoSI5Q/+Puz0ydhReF22vGHWZNwu
-1f3ASS5nSb36j7wS5S4loo4q5ICpSRR4t6dEwdrsN/uIJYQA1/a6nqfs8spFTq6t
-28oDn8R2bg0/yIr/cwGJzPRkXPvU/YK8wBcMemJRqt45Ki/j3igrK6KHJUjz8zbN
-9GQrXUOik3dPlNCVIzoskJB2qhmQ+kwpCgG7jOrUOOTE7FqWGhHy3m6JW4bCwpPA
-i8uGdn76mV1PVkOEc7qRAlcq3zzNU2r+fOVVZ2+rgADNecZWgVxVtztI1Tw1yryQ
-av3HPDjTaOqjiH7UkUEy/QPgfqPQ4PSWCNpTQTBU1sWe//HuaDR5rXh97UKvprwY
-hWUQsb5tS0PdUG+dj2e4t9j80VVhUFyARTWr90PEBQg1aZBAlyJ7t6DeFkCrf0I6
-ZHJrcBz+1zyzT6mo9KjoOa85Nl5BIDiEMkLk5Hv3/NzevK8bRDJUOyfXW9yBRKm+
-tdYOmQCXVVrp2lInQ+9joXuw9kd8ww7akvFSHol2VMC6GvS9n0GHTeYv0+DUenDP
-uZ9S4Dx5JOAT0GP9iTxnFURPN3hawGDBQp8AcALs9SWCIdhMbH95TPt7oNeSH2KL
-mNXA+ULyWx0jkyaQVlAQqBMhQB/SWMVyUcq+XYY2C2/Vs4l130j4PVSg7QtcU5BX
-94t2jrCiXkTnu/Gyvau1pcg=
-=m6+C
-
------END PGP PUBLIC KEY BLOCK-----
+/fJjoDxHKbPwNjxPjwARAQAB
     </pre>
   </div>
 </div>
-
-
