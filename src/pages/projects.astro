@@ -2,80 +2,115 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 
-const projects = [
+const personalProjects = [
   {
     title: "MagueyGuard",
-    description: "VPN + DNS Firewall stack focused on privacy. Infra-as-code deployment.",
+    description: "Distributed VPN and DNS firewall stack deployed with Terraform and Ansible across multiple VPS. Privacy-focused, no trackers, no logs.",
     link: "#",
-    tags: ["WireGuard", "Pi-hole", "Terraform", "Ansible"]
-  },
-  {
-    title: "Odoo ERP Hardening",
-    description: "Security optimization for Odoo Community Edition with PostgreSQL tuning.",
-    link: "#",
-    tags: ["Odoo", "PostgreSQL", "Ansible"]
+    tags: ["WireGuard", "Pi-hole", "Terraform", "Ansible"],
+    snippet: "ansible-playbook magueyguard.yml"
   },
   {
     title: "Infra-as-Code Lab",
-    description: "CI/CD pipelines using Jenkins, Terraform and Linux for full-stack infra.",
+    description: "Personal lab to test CI/CD pipelines using Jenkins, Terraform, and Linux. Focused on reproducible infrastructure deployments.",
     link: "#",
-    tags: ["Terraform", "Ansible", "Jenkins", "Linux"]
-  },
-  {
-    title: "DevOps Toolbox",
-    description: "Pre-configured toolset with Nginx, Docker, Redis and GitHub Actions.",
-    link: "#",
-    tags: ["Docker", "GitHub", "Nginx", "Redis"]
+    tags: ["Terraform", "Ansible", "Jenkins", "Linux"],
+    snippet: "terraform apply"
   },
   {
     title: "K8s Homelab",
-    description: "Self-hosted Kubernetes cluster with monitoring and GitOps setup.",
+    description: "Self-hosted cluster built with K3s and MetalLB. GitOps via FluxCD, monitoring with Prometheus, and Telegram alerts.",
     link: "#",
-    tags: ["Kubernetes", "GitHub", "Linux"]
-  },
-  {
-    title: "MagueyMirror",
-    description: "Debian package mirror using Nginx and rsync, running on hard-metal.",
-    link: "#",
-    tags: ["Linux", "Nginx"]
+    tags: ["Kubernetes", "GitHub", "Linux", "GitOps"],
+    snippet: "kubectl get nodes"
   },
   {
     title: "Secure Bash Scripts",
-    description: "Audited shell scripts for backups, server hardening, and automation.",
+    description: "Audited shell scripts for encrypted backups, server hardening, and automation across Debian and OpenBSD systems.",
     link: "#",
-    tags: ["Linux", "Ansible"]
+    tags: ["Linux", "Bash", "Ansible"]
   },
   {
     title: "Infra Templates",
-    description: "Reusable IaC blueprints for fast and secure deployments.",
+    description: "Reusable Infrastructure-as-Code blueprints for fast and secure deployments on VPS or local environments.",
     link: "#",
     tags: ["Terraform", "Ansible", "Docker"]
   },
   {
     title: "Remote Uptime Monitor",
-    description: "Simple self-hosted uptime checker with Telegram alerts.",
+    description: "Self-hosted uptime checker with Telegram integration. No SaaS dependencies, fully private.",
     link: "#",
     tags: ["Linux", "Redis", "Telegram"]
+  }
+];
+
+const communityProjects = [
+  {
+    title: "MagueyMirror",
+    description: "Official Debian mirror for LATAM, running on bare-metal with Nginx and rsync. Serves ~25% of Mexico's package traffic.",
+    link: "#",
+    tags: ["Linux", "Nginx", "Debian"],
+    snippet: "rsync -avz debian.org::debian /mirror"
+  }
+];
+
+const freelanceProjects = [
+  {
+    title: "Odoo ERP Hardening",
+    description: "Security hardening of Odoo CE for an auto parts business with 20K+ SKUs. Includes PostgreSQL tuning and automated backups.",
+    link: "#",
+    tags: ["Odoo", "PostgreSQL", "Linux", "Ansible"]
+  },
+  {
+    title: "DevOps Toolbox",
+    description: "Delivery-ready stack: Nginx, Redis, Docker, and GitHub Actions preconfigured. Includes deployment and backup scripts.",
+    link: "#",
+    tags: ["Docker", "Nginx", "GitHub", "Redis"]
   }
 ];
 ---
 
 <BaseLayout>
-  <section class="px-6 py-12 space-y-6">
+  <section class="px-6 py-12 space-y-8">
     <h1 class="text-4xl font-bold text-[#e0e0e0]">Projects</h1>
     <p class="text-lg text-[#bbbbbb] max-w-2xl mb-8">
-      Side-projects built in my free time, focused on infrastructure deployment and security — using tools like Terraform, Ansible, Docker, Jenkins, and more..
+      A curated list of personal tools, freelance work, and community contributions — focused on automation, infrastructure, security, and open-source development.
     </p>
 
-    <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      {projects.map(project => (
-        <ProjectCard
-          title={project.title}
-          description={project.description}
-          link={project.link}
-          tags={project.tags}
-        />
-      ))}
-    </div>
+    <details class="group border border-[#333] rounded-xl overflow-hidden mb-6">
+      <summary class="cursor-pointer bg-[#121212] px-4 py-3 font-mono text-sm text-accent hover:text-white transition flex items-center justify-between">
+        🛠️ Personal Projects
+        <span class="transform transition-transform group-open:rotate-90">▶</span>
+      </summary>
+      <div class="px-6 py-6 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-[#0a0a0a] border-t border-[#222]">
+        {personalProjects.map(project => (
+          <ProjectCard {...project} />
+        ))}
+      </div>
+    </details>
+
+    <details class="group border border-[#333] rounded-xl overflow-hidden mb-6">
+      <summary class="cursor-pointer bg-[#121212] px-4 py-3 font-mono text-sm text-accent hover:text-white transition flex items-center justify-between">
+        🌐 Community Contributions
+        <span class="transform transition-transform group-open:rotate-90">▶</span>
+      </summary>
+      <div class="px-6 py-6 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-[#0a0a0a] border-t border-[#222]">
+        {communityProjects.map(project => (
+          <ProjectCard {...project} />
+        ))}
+      </div>
+    </details>
+
+    <details class="group border border-[#333] rounded-xl overflow-hidden">
+      <summary class="cursor-pointer bg-[#121212] px-4 py-3 font-mono text-sm text-accent hover:text-white transition flex items-center justify-between">
+        💼 Freelance / Client Work
+        <span class="transform transition-transform group-open:rotate-90">▶</span>
+      </summary>
+      <div class="px-6 py-6 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-[#0a0a0a] border-t border-[#222]">
+        {freelanceProjects.map(project => (
+          <ProjectCard {...project} />
+        ))}
+      </div>
+    </details>
   </section>
 </BaseLayout>

@@ -8,7 +8,6 @@ const { pathname } = Astro.url;
     <ul class="flex gap-6 text-gray-400 font-bold">
       <li><a href="/" class={pathname === '/' ? 'text-white' : 'hover:text-white transition'}>/home</a></li>
       <li><a href="/about" class={pathname === '/about' ? 'text-white' : 'hover:text-white transition'}>/about</a></li>
-      <li><a href="/resume" class={pathname === '/resume' ? 'text-white' : 'hover:text-white transition'}>/resume</a></li>
       <li><a href="/experience" class={pathname === '/experience' ? 'text-white' : 'hover:text-white transition'}>/experience</a></li>
       <li><a href="/projects" class={pathname === '/projects' ? 'text-white' : 'hover:text-white transition'}>/projects</a></li>
       <li><a href="/toolset" class={pathname === '/toolset' ? 'text-white' : 'hover:text-white transition'}>/toolset</a></li>
