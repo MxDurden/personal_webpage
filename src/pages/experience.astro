@@ -6,28 +6,38 @@ const description = "20+ years of technical roles across security, infrastructur
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="min-h-screen px-6 py-12 text-white">
-    <h1 class="text-4xl font-bold text-gray-100 mb-6">Experience</h1>
-    <p class="text-lg text-gray-400 mb-8 max-w-2xl">
-      Technical roles and contributions across security, infrastructure, and automation — spanning startups, enterprises, and freelance projects.
-    </p>
+  <section class="container mx-auto px-6 md:px-12 py-12">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold text-steel-100 mb-4 font-mono">
+        <span class="text-accent">//</span> Experience
+      </h1>
+      <p class="text-lg text-steel-300 mb-12 max-w-3xl">
+        Technical roles and contributions across security, infrastructure, and automation — spanning startups, enterprises, and freelance projects.
+      </p>
 
-    <div class="relative border-l border-gray-700 pl-6 space-y-12">
+    <div class="relative border-l-2 border-steel-800 pl-8 space-y-10">
 
 
-<div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
-  <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
+<div x-data="{ open: false }" class="relative animate-fade-in-up transition-all duration-300">
+  <div class="absolute w-3 h-3 bg-accent rounded-full -left-[26px] top-2 border-2 border-carbon shadow-lg shadow-accent/20"></div>
 
-  <button @click="open = !open" class="text-left w-full group focus:outline-none">
-    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+  <button @click="open = !open" class="text-left w-full group focus:outline-none p-4 rounded-lg hover:bg-carbon/30 transition-all duration-200">
+    <h3 class="text-xl md:text-2xl font-semibold text-steel-100 group-hover:text-accent transition-colors font-mono mb-2">
       DevOps / Cloud Infrastructure Engineer
     </h3>
-    <time class="block mb-1 text-sm text-gray-500">2021 – 2023</time>
-    <p class="text-sm text-gray-500 italic mb-2">Enterprise Consulting • Global Clients in Finance & Aerospace</p>
+    <time class="block mb-1 text-sm text-steel-500 font-mono">2021 – 2023</time>
+    <p class="text-sm text-steel-400 italic">Enterprise Consulting • Global Clients in Finance & Aerospace</p>
   </button>
 
-  <div x-show="open" x-transition class="overflow-hidden mt-2">
-    <ul class="space-y-1">
+  <div x-show="open"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 max-h-0"
+       x-transition:enter-end="opacity-100 max-h-screen"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100 max-h-screen"
+       x-transition:leave-end="opacity-0 max-h-0"
+       class="overflow-hidden mt-2">
+    <ul class="space-y-2 py-2">
       <template x-for="(item, index) in [
         'Supported infrastructure and DevOps workflows across multiple clients including USAA, Santander, and Bombardier.',
         'Performed large-scale application and infrastructure migrations between data centers and cloud environments.',
@@ -40,8 +50,9 @@ const description = "20+ years of technical roles across security, infrastructur
         'Documented operational runbooks and supported SRE workflows for reliability and incident response.',
         'Assisted in the development and implementation of infrastructure-as-code strategies across client stacks.'
       ]" :key="index">
-        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
-            :style="'animation-delay: ' + (index * 100) + 'ms'">
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+            :class="open && 'list-item-fade'"
+            :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
         </li>
       </template>
@@ -53,16 +64,23 @@ const description = "20+ years of technical roles across security, infrastructur
 <div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
   <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
 
-  <button @click="open = !open" class="text-left w-full group focus:outline-none">
-    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+  <button @click="open = !open" class="text-left w-full group focus:outline-none p-4 rounded-lg hover:bg-carbon/30 transition-all duration-200">
+    <h3 class="text-xl md:text-2xl font-semibold text-steel-100 group-hover:text-accent transition-colors font-mono mb-2">
       Global IT Operations Manager
     </h3>
-    <time class="block mb-1 text-sm text-gray-500">2019 – 2021</time>
-    <p class="text-sm text-gray-500 italic mb-2">India • US • UK • Mexico</p>
+    <time class="block mb-1 text-sm text-steel-500 font-mono">2019 – 2021</time>
+    <p class="text-sm text-steel-400 italic">India • US • UK • Mexico</p>
   </button>
 
-  <div x-show="open" x-transition class="overflow-hidden mt-2">
-    <ul class="space-y-1">
+  <div x-show="open"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 max-h-0"
+       x-transition:enter-end="opacity-100 max-h-screen"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100 max-h-screen"
+       x-transition:leave-end="opacity-0 max-h-0"
+       class="overflow-hidden mt-2">
+    <ul class="space-y-2 py-2">
       <template x-for="(item, index) in [
         'Served as primary IT contact between India, Mexico, the US, and UK, coordinating infrastructure and compliance.',
         'Led internal IT team and managed global infrastructure supporting call center operations and backend services.',
@@ -76,8 +94,9 @@ const description = "20+ years of technical roles across security, infrastructur
         'Handled procurement, vendor contracts, and housing of production servers in external datacenters.',
         'Maintained documentation, internal wikis, and cost reports for infrastructure and development ops.'
       ]" :key="index">
-        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
-            :style="'animation-delay: ' + (index * 100) + 'ms'">
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+            :class="open && 'list-item-fade'"
+            :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
         </li>
       </template>
@@ -89,16 +108,23 @@ const description = "20+ years of technical roles across security, infrastructur
 <div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
   <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
 
-  <button @click="open = !open" class="text-left w-full group focus:outline-none">
-    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+  <button @click="open = !open" class="text-left w-full group focus:outline-none p-4 rounded-lg hover:bg-carbon/30 transition-all duration-200">
+    <h3 class="text-xl md:text-2xl font-semibold text-steel-100 group-hover:text-accent transition-colors font-mono mb-2">
       IT Manager – Infrastructure & Security
     </h3>
-    <time class="block mb-1 text-sm text-gray-500">2017 – 2019</time>
-    <p class="text-sm text-gray-500 italic mb-2">National Logistics Company • Mexico</p>
+    <time class="block mb-1 text-sm text-steel-500 font-mono">2017 – 2019</time>
+    <p class="text-sm text-steel-400 italic">National Logistics Company • Mexico</p>
   </button>
 
-  <div x-show="open" x-transition class="overflow-hidden mt-2">
-    <ul class="space-y-1">
+  <div x-show="open"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 max-h-0"
+       x-transition:enter-end="opacity-100 max-h-screen"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100 max-h-screen"
+       x-transition:leave-end="opacity-0 max-h-0"
+       class="overflow-hidden mt-2">
+    <ul class="space-y-2 py-2">
       <template x-for="(item, index) in [
         'Led IT operations for a nationwide logistics firm with remote offices in every major port city.',
         'Managed a five-person internal team and coordinated external developers and system implementers.',
@@ -111,8 +137,9 @@ const description = "20+ years of technical roles across security, infrastructur
         'Supervised the development of a mobile internal app (iOS/Android), coordinating with external dev teams.',
         'Handled hardware lifecycle management, vendor relations, internet service procurement, and network upgrades.'
       ]" :key="index">
-        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
-            :style="'animation-delay: ' + (index * 100) + 'ms'">
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+            :class="open && 'list-item-fade'"
+            :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
         </li>
       </template>
@@ -124,16 +151,23 @@ const description = "20+ years of technical roles across security, infrastructur
 <div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
   <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
 
-  <button @click="open = !open" class="text-left w-full group focus:outline-none">
-    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+  <button @click="open = !open" class="text-left w-full group focus:outline-none p-4 rounded-lg hover:bg-carbon/30 transition-all duration-200">
+    <h3 class="text-xl md:text-2xl font-semibold text-steel-100 group-hover:text-accent transition-colors font-mono mb-2">
       IT Manager
     </h3>
-    <time class="block mb-1 text-sm text-gray-500">2015 – 2017</time>
-    <p class="text-sm text-gray-500 italic mb-2">National Civil Engineering & Construction Firm • Mexico</p>
+    <time class="block mb-1 text-sm text-steel-500 font-mono">2015 – 2017</time>
+    <p class="text-sm text-steel-400 italic">National Civil Engineering & Construction Firm • Mexico</p>
   </button>
 
-  <div x-show="open" x-transition class="overflow-hidden mt-2">
-    <ul class="space-y-1">
+  <div x-show="open"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 max-h-0"
+       x-transition:enter-end="opacity-100 max-h-screen"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100 max-h-screen"
+       x-transition:leave-end="opacity-0 max-h-0"
+       class="overflow-hidden mt-2">
+    <ul class="space-y-2 py-2">
       <template x-for="(item, index) in [
         'Managed the entire IT department, overseeing network administration, cybersecurity, cloud systems, and end-user support.',
         'Implemented and maintained firewall rules, web filtering, and bandwidth controls to secure network traffic.',
@@ -145,8 +179,9 @@ const description = "20+ years of technical roles across security, infrastructur
         'Ensured data integrity through endpoint protection, secure backups, and internal access controls.',
         'Coordinated software licensing, asset inventory, and IT vendor contracts across regional offices.'
       ]" :key="index">
-        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
-            :style="'animation-delay: ' + (index * 100) + 'ms'">
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+            :class="open && 'list-item-fade'"
+            :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
         </li>
       </template>
@@ -159,16 +194,23 @@ const description = "20+ years of technical roles across security, infrastructur
 <div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
   <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
 
-  <button @click="open = !open" class="text-left w-full group focus:outline-none">
-    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+  <button @click="open = !open" class="text-left w-full group focus:outline-none p-4 rounded-lg hover:bg-carbon/30 transition-all duration-200">
+    <h3 class="text-xl md:text-2xl font-semibold text-steel-100 group-hover:text-accent transition-colors font-mono mb-2">
       Head of IT – Western Region
     </h3>
-    <time class="block mb-1 text-sm text-gray-500">2013 – 2015</time>
-    <p class="text-sm text-gray-500 italic mb-2">National Auto Parts Distributor • Guadalajara, Mexico</p>
+    <time class="block mb-1 text-sm text-steel-500 font-mono">2013 – 2015</time>
+    <p class="text-sm text-steel-400 italic">National Auto Parts Distributor • Guadalajara, Mexico</p>
   </button>
 
-  <div x-show="open" x-transition class="overflow-hidden mt-2">
-    <ul class="space-y-1">
+  <div x-show="open"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 max-h-0"
+       x-transition:enter-end="opacity-100 max-h-screen"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100 max-h-screen"
+       x-transition:leave-end="opacity-0 max-h-0"
+       class="overflow-hidden mt-2">
+    <ul class="space-y-2 py-2">
       <template x-for="(item, index) in [
         'Led IT operations for the Western region of a nationwide auto parts distributor, managing infrastructure across multiple branches.',
         'Maintained Linux-based environments (Slackware) for servers and workstations, including hardware provisioning and OS installations.',
@@ -178,8 +220,9 @@ const description = "20+ years of technical roles across security, infrastructur
         'Provided remote and on-site support for connectivity, system issues, and hardware replacements.',
         'Coordinated vendor relationships and handled procurement and infrastructure upgrades for all branches in the region.'
       ]" :key="index">
-        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
-            :style="'animation-delay: ' + (index * 100) + 'ms'">
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+            :class="open && 'list-item-fade'"
+            :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
         </li>
       </template>
@@ -192,16 +235,23 @@ const description = "20+ years of technical roles across security, infrastructur
  <div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
   <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
 
-  <button @click="open = !open" class="text-left w-full group focus:outline-none">
-    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+  <button @click="open = !open" class="text-left w-full group focus:outline-none p-4 rounded-lg hover:bg-carbon/30 transition-all duration-200">
+    <h3 class="text-xl md:text-2xl font-semibold text-steel-100 group-hover:text-accent transition-colors font-mono mb-2">
       Linux Systems Engineer
     </h3>
-    <time class="block mb-1 text-sm text-gray-500">2011 – 2013</time>
-    <p class="text-sm text-gray-500 italic mb-2">Jalisco • Animation Studios</p>
+    <time class="block mb-1 text-sm text-steel-500 font-mono">2011 – 2013</time>
+    <p class="text-sm text-steel-400 italic">Jalisco • Animation Studios</p>
   </button>
 
-  <div x-show="open" x-transition class="overflow-hidden mt-2">
-    <ul class="space-y-1">
+  <div x-show="open"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 max-h-0"
+       x-transition:enter-end="opacity-100 max-h-screen"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100 max-h-screen"
+       x-transition:leave-end="opacity-0 max-h-0"
+       class="overflow-hidden mt-2">
+    <ul class="space-y-2 py-2">
       <template x-for="(item, index) in [
         'Provided Linux-based infrastructure support for animation and rendering pipelines in production environments.',
         'Installed and configured services for internal file sharing, job queuing, and collaborative workflows.',
@@ -211,8 +261,9 @@ const description = "20+ years of technical roles across security, infrastructur
         'Deployed and managed Xen-based virtualization, including network bridges, guest configuration, and access control.',
         'Maintained and supported remote and on-site servers across multiple departments and animation teams.'
       ]" :key="index">
-        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
-            :style="'animation-delay: ' + (index * 100) + 'ms'">
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+            :class="open && 'list-item-fade'"
+            :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
         </li>
       </template>
@@ -224,16 +275,23 @@ const description = "20+ years of technical roles across security, infrastructur
 <div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
   <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
 
-  <button @click="open = !open" class="text-left w-full group focus:outline-none">
-    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+  <button @click="open = !open" class="text-left w-full group focus:outline-none p-4 rounded-lg hover:bg-carbon/30 transition-all duration-200">
+    <h3 class="text-xl md:text-2xl font-semibold text-steel-100 group-hover:text-accent transition-colors font-mono mb-2">
       Independent IT Consultant & Small Business Owner
     </h3>
-    <time class="block mb-1 text-sm text-gray-500">2007 – 2011</time>
-    <p class="text-sm text-gray-500 italic mb-2">Mexico • Government & Education Clients</p>
+    <time class="block mb-1 text-sm text-steel-500 font-mono">2007 – 2011</time>
+    <p class="text-sm text-steel-400 italic">Mexico • Government & Education Clients</p>
   </button>
 
-  <div x-show="open" x-transition class="overflow-hidden mt-2">
-    <ul class="space-y-1">
+  <div x-show="open"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 max-h-0"
+       x-transition:enter-end="opacity-100 max-h-screen"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100 max-h-screen"
+       x-transition:leave-end="opacity-0 max-h-0"
+       class="overflow-hidden mt-2">
+    <ul class="space-y-2 py-2">
       <template x-for="(item, index) in [
         'Founded and operated a small IT services business, delivering full-stack technical support and consulting.',
         'Led structured cabling and LAN deployment projects for universities and municipal government offices.',
@@ -243,8 +301,9 @@ const description = "20+ years of technical roles across security, infrastructur
         'Sold and configured computer systems, peripherals, and office technology solutions for SMB clients.',
         'Deployed VPN solutions and internal file-sharing infrastructure tailored to client needs.'
       ]" :key="index">
-        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
-            :style="'animation-delay: ' + (index * 100) + 'ms'">
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+            :class="open && 'list-item-fade'"
+            :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
         </li>
       </template>
@@ -256,16 +315,23 @@ const description = "20+ years of technical roles across security, infrastructur
  <div x-data="{ open: false }" class="relative ml-4 animate-fade-in-up transition-all duration-300">
   <div class="absolute w-4 h-4 bg-green-400 rounded-full -left-6 top-2 border-2 border-black"></div>
 
-  <button @click="open = !open" class="text-left w-full group focus:outline-none">
-    <h3 class="text-xl font-semibold text-gray-100 group-hover:text-accent transition">
+  <button @click="open = !open" class="text-left w-full group focus:outline-none p-4 rounded-lg hover:bg-carbon/30 transition-all duration-200">
+    <h3 class="text-xl md:text-2xl font-semibold text-steel-100 group-hover:text-accent transition-colors font-mono mb-2">
       IT Support Technician
     </h3>
-    <time class="block mb-1 text-sm text-gray-500">2003 – 2007</time>
-    <p class="text-sm text-gray-500 italic mb-2">On-site • Small Business • Jalisco</p>
+    <time class="block mb-1 text-sm text-steel-500 font-mono">2003 – 2007</time>
+    <p class="text-sm text-steel-400 italic">On-site • Small Business • Jalisco</p>
   </button>
 
-  <div x-show="open" x-transition class="overflow-hidden mt-2">
-    <ul class="space-y-1">
+  <div x-show="open"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 max-h-0"
+       x-transition:enter-end="opacity-100 max-h-screen"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100 max-h-screen"
+       x-transition:leave-end="opacity-0 max-h-0"
+       class="overflow-hidden mt-2">
+    <ul class="space-y-2 py-2">
       <template x-for="(item, index) in [
         'Provided on-site IT support for small and mid-sized businesses, troubleshooting hardware and network issues.',
         'Assembled and configured desktop PCs, installed operating systems, and performed routine maintenance tasks.',
@@ -274,8 +340,9 @@ const description = "20+ years of technical roles across security, infrastructur
         'Installed and updated antivirus solutions; educated end-users on basic cybersecurity hygiene.',
         'Handled system reinstalls, data backups, and peripheral setup for printers, scanners, and routers.'
       ]" :key="index">
-        <li class="list-item-fade list-disc list-inside text-gray-400 text-base"
-            :style="'animation-delay: ' + (index * 100) + 'ms'">
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+            :class="open && 'list-item-fade'"
+            :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
         </li>
       </template>
@@ -285,9 +352,46 @@ const description = "20+ years of technical roles across security, infrastructur
 </div>
 
 <!--  BLOQUE DE CIERRE -->
-    <div class="mt-16 text-center text-gray-500 text-sm italic">
+    <div class="mt-16 text-center text-steel-500 text-sm italic">
   <p>More details and project breakdowns available on request.</p>
-  <p class="mt-2">Let’s build something secure and scalable — <a href="/contact" class="text-accent underline hover:text-white">get in touch</a>.</p>
+  <p class="mt-2">Let's build something secure and scalable — <a href="/contact" class="text-accent underline hover:text-accent/80 transition-colors">get in touch</a>.</p>
 </div>
+    </div>
   </section>
 </BaseLayout>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .list-item-fade {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  button:focus-visible {
+    outline: 2px solid #00d9ff;
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+</style>
