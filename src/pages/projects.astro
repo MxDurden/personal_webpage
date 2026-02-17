@@ -71,46 +71,49 @@ const freelanceProjects = [
 ---
 
 <BaseLayout>
-  <section class="px-6 py-12 space-y-8">
-    <h1 class="text-4xl font-bold text-[#e0e0e0]">Projects</h1>
-    <p class="text-lg text-[#bbbbbb] max-w-2xl mb-8">
-      A curated list of personal tools, freelance work, and community contributions — focused on automation, infrastructure, security, and open-source development.
-    </p>
+  <section class="container mx-auto px-6 py-16 space-y-16">
+    <div class="space-y-4">
+      <h1 class="text-4xl md:text-5xl font-mono font-bold text-steel-100">
+        <span class="text-accent">></span> Projects
+      </h1>
+      <p class="text-lg text-steel-300 max-w-3xl font-mono leading-relaxed">
+        A curated list of personal tools, freelance work, and community contributions — focused on automation, infrastructure, security, and open-source development.
+      </p>
+    </div>
 
-    <details class="group border border-[#333] rounded-xl overflow-hidden mb-6">
-      <summary class="cursor-pointer bg-[#121212] px-4 py-3 font-mono text-sm text-accent hover:text-white transition flex items-center justify-between">
-        🛠️ Personal Projects
-        <span class="transform transition-transform group-open:rotate-90">▶</span>
-      </summary>
-      <div class="px-6 py-6 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-[#0a0a0a] border-t border-[#222]">
-        {personalProjects.map(project => (
-          <ProjectCard {...project} />
-        ))}
+    <div class="space-y-12">
+      <div class="space-y-8">
+        <h2 class="text-2xl font-mono font-semibold text-steel-200 border-b border-steel-800 pb-3">
+          Personal Projects
+        </h2>
+        <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {personalProjects.map(project => (
+            <ProjectCard {...project} />
+          ))}
+        </div>
       </div>
-    </details>
 
-    <details class="group border border-[#333] rounded-xl overflow-hidden mb-6">
-      <summary class="cursor-pointer bg-[#121212] px-4 py-3 font-mono text-sm text-accent hover:text-white transition flex items-center justify-between">
-        🌐 Community Contributions
-        <span class="transform transition-transform group-open:rotate-90">▶</span>
-      </summary>
-      <div class="px-6 py-6 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-[#0a0a0a] border-t border-[#222]">
-        {communityProjects.map(project => (
-          <ProjectCard {...project} />
-        ))}
+      <div class="space-y-8">
+        <h2 class="text-2xl font-mono font-semibold text-steel-200 border-b border-steel-800 pb-3">
+          Community Contributions
+        </h2>
+        <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {communityProjects.map(project => (
+            <ProjectCard {...project} />
+          ))}
+        </div>
       </div>
-    </details>
 
-    <details class="group border border-[#333] rounded-xl overflow-hidden">
-      <summary class="cursor-pointer bg-[#121212] px-4 py-3 font-mono text-sm text-accent hover:text-white transition flex items-center justify-between">
-        💼 Freelance / Client Work
-        <span class="transform transition-transform group-open:rotate-90">▶</span>
-      </summary>
-      <div class="px-6 py-6 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-[#0a0a0a] border-t border-[#222]">
-        {freelanceProjects.map(project => (
-          <ProjectCard {...project} />
-        ))}
+      <div class="space-y-8">
+        <h2 class="text-2xl font-mono font-semibold text-steel-200 border-b border-steel-800 pb-3">
+          Freelance / Client Work
+        </h2>
+        <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {freelanceProjects.map(project => (
+            <ProjectCard {...project} />
+          ))}
+        </div>
       </div>
-    </details>
+    </div>
   </section>
 </BaseLayout>

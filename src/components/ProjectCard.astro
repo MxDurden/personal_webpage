@@ -3,27 +3,23 @@ import IconTech from './IconTech.astro';
 const { title, description, link, tags = [] } = Astro.props;
 ---
 
-<div class="p-6 rounded-xl shadow-lg border border-[#2a2a2a] bg-[#0f172a]/80 backdrop-blur-sm hover:border-accent/50 hover:shadow-accent/10 transition-transform duration-200 hover:scale-[1.02]">
-  <h2 class="text-xl font-bold text-[#e0e0e0] mb-2 tracking-tight">{title}</h2>
-  <p class="text-sm text-[#bbbbbb] mb-5 leading-relaxed">{description}</p>
+<div class="p-6 border border-steel-800 bg-carbon/30 backdrop-blur-sm hover:border-steel-700 transition-all duration-300">
+  <h2 class="text-xl font-mono font-bold text-steel-100 mb-3">{title}</h2>
+  <p class="text-sm font-mono text-steel-300 mb-5 leading-relaxed">{description}</p>
 
   {tags.length > 0 && (
-    <>
-      <p class="text-xs uppercase tracking-wide text-accent mb-1 border-b border-[#333] pb-1">Technologies Used</p>
-      <div class="flex flex-wrap gap-2 mb-5">
-        {tags.map(tag => (
-          <span class="flex items-center gap-1 bg-[#1e293b] text-blue-300 text-xs font-mono px-2 py-1 rounded hover:scale-105 transition-transform duration-150">
-            <IconTech name={tag} />
-            {tag}
-          </span>
-        ))}
-      </div>
-    </>
+    <div class="flex flex-wrap gap-2">
+      {tags.map(tag => (
+        <span class="text-xs font-mono px-2 py-1 bg-steel-900/50 text-steel-400 border border-steel-800">
+          {tag}
+        </span>
+      ))}
+    </div>
   )}
 
   {link !== "#" && (
-    <a href={link} target="_blank" rel="noopener noreferrer" class="text-sm text-accent hover:text-white underline">
-      View Details
+    <a href={link} target="_blank" rel="noopener noreferrer" class="inline-block mt-4 text-sm font-mono text-accent hover:text-steel-100 transition-colors">
+      <span class="text-accent">></span> View Details
     </a>
   )}
 </div>
