@@ -37,7 +37,7 @@ const description = "20+ years of technical roles across security, infrastructur
        x-transition:leave-start="opacity-100 max-h-screen"
        x-transition:leave-end="opacity-0 max-h-0"
        class="overflow-hidden mt-2">
-    <ul class="space-y-2 py-2">
+    <ul class="space-y-2 py-2 md:columns-2 md:gap-6 lg:gap-8">
       <template x-for="(item, index) in [
         'Supported infrastructure and DevOps workflows across multiple clients including USAA, Santander, and Bombardier.',
         'Performed large-scale application and infrastructure migrations between data centers and cloud environments.',
@@ -50,7 +50,7 @@ const description = "20+ years of technical roles across security, infrastructur
         'Documented operational runbooks and supported SRE workflows for reliability and incident response.',
         'Assisted in the development and implementation of infrastructure-as-code strategies across client stacks.'
       ]" :key="index">
-        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0 break-inside-avoid"
             :class="open && 'list-item-fade'"
             :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
@@ -80,7 +80,7 @@ const description = "20+ years of technical roles across security, infrastructur
        x-transition:leave-start="opacity-100 max-h-screen"
        x-transition:leave-end="opacity-0 max-h-0"
        class="overflow-hidden mt-2">
-    <ul class="space-y-2 py-2">
+    <ul class="space-y-2 py-2 md:columns-2 md:gap-6 lg:gap-8">
       <template x-for="(item, index) in [
         'Served as primary IT contact between India, Mexico, the US, and UK, coordinating infrastructure and compliance.',
         'Led internal IT team and managed global infrastructure supporting call center operations and backend services.',
@@ -94,7 +94,7 @@ const description = "20+ years of technical roles across security, infrastructur
         'Handled procurement, vendor contracts, and housing of production servers in external datacenters.',
         'Maintained documentation, internal wikis, and cost reports for infrastructure and development ops.'
       ]" :key="index">
-        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0 break-inside-avoid"
             :class="open && 'list-item-fade'"
             :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
@@ -124,7 +124,7 @@ const description = "20+ years of technical roles across security, infrastructur
        x-transition:leave-start="opacity-100 max-h-screen"
        x-transition:leave-end="opacity-0 max-h-0"
        class="overflow-hidden mt-2">
-    <ul class="space-y-2 py-2">
+    <ul class="space-y-2 py-2 md:columns-2 md:gap-6 lg:gap-8">
       <template x-for="(item, index) in [
         'Led IT operations for a nationwide logistics firm with remote offices in every major port city.',
         'Managed a five-person internal team and coordinated external developers and system implementers.',
@@ -137,7 +137,7 @@ const description = "20+ years of technical roles across security, infrastructur
         'Supervised the development of a mobile internal app (iOS/Android), coordinating with external dev teams.',
         'Handled hardware lifecycle management, vendor relations, internet service procurement, and network upgrades.'
       ]" :key="index">
-        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0 break-inside-avoid"
             :class="open && 'list-item-fade'"
             :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
@@ -167,7 +167,7 @@ const description = "20+ years of technical roles across security, infrastructur
        x-transition:leave-start="opacity-100 max-h-screen"
        x-transition:leave-end="opacity-0 max-h-0"
        class="overflow-hidden mt-2">
-    <ul class="space-y-2 py-2">
+    <ul class="space-y-2 py-2 md:columns-2 md:gap-6 lg:gap-8">
       <template x-for="(item, index) in [
         'Managed the entire IT department, overseeing network administration, cybersecurity, cloud systems, and end-user support.',
         'Implemented and maintained firewall rules, web filtering, and bandwidth controls to secure network traffic.',
@@ -179,7 +179,7 @@ const description = "20+ years of technical roles across security, infrastructur
         'Ensured data integrity through endpoint protection, secure backups, and internal access controls.',
         'Coordinated software licensing, asset inventory, and IT vendor contracts across regional offices.'
       ]" :key="index">
-        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0 break-inside-avoid"
             :class="open && 'list-item-fade'"
             :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
@@ -210,7 +210,7 @@ const description = "20+ years of technical roles across security, infrastructur
        x-transition:leave-start="opacity-100 max-h-screen"
        x-transition:leave-end="opacity-0 max-h-0"
        class="overflow-hidden mt-2">
-    <ul class="space-y-2 py-2">
+    <ul class="space-y-2 py-2 md:columns-2 md:gap-6 lg:gap-8">
       <template x-for="(item, index) in [
         'Led IT operations for the Western region of a nationwide auto parts distributor, managing infrastructure across multiple branches.',
         'Maintained Linux-based environments (Slackware) for servers and workstations, including hardware provisioning and OS installations.',
@@ -220,7 +220,7 @@ const description = "20+ years of technical roles across security, infrastructur
         'Provided remote and on-site support for connectivity, system issues, and hardware replacements.',
         'Coordinated vendor relationships and handled procurement and infrastructure upgrades for all branches in the region.'
       ]" :key="index">
-        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0 break-inside-avoid"
             :class="open && 'list-item-fade'"
             :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
@@ -251,7 +251,7 @@ const description = "20+ years of technical roles across security, infrastructur
        x-transition:leave-start="opacity-100 max-h-screen"
        x-transition:leave-end="opacity-0 max-h-0"
        class="overflow-hidden mt-2">
-    <ul class="space-y-2 py-2">
+    <ul class="space-y-2 py-2 md:columns-2 md:gap-6 lg:gap-8">
       <template x-for="(item, index) in [
         'Provided Linux-based infrastructure support for animation and rendering pipelines in production environments.',
         'Installed and configured services for internal file sharing, job queuing, and collaborative workflows.',
@@ -261,7 +261,7 @@ const description = "20+ years of technical roles across security, infrastructur
         'Deployed and managed Xen-based virtualization, including network bridges, guest configuration, and access control.',
         'Maintained and supported remote and on-site servers across multiple departments and animation teams.'
       ]" :key="index">
-        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0 break-inside-avoid"
             :class="open && 'list-item-fade'"
             :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
@@ -291,7 +291,7 @@ const description = "20+ years of technical roles across security, infrastructur
        x-transition:leave-start="opacity-100 max-h-screen"
        x-transition:leave-end="opacity-0 max-h-0"
        class="overflow-hidden mt-2">
-    <ul class="space-y-2 py-2">
+    <ul class="space-y-2 py-2 md:columns-2 md:gap-6 lg:gap-8">
       <template x-for="(item, index) in [
         'Founded and operated a small IT services business, delivering full-stack technical support and consulting.',
         'Led structured cabling and LAN deployment projects for universities and municipal government offices.',
@@ -301,7 +301,7 @@ const description = "20+ years of technical roles across security, infrastructur
         'Sold and configured computer systems, peripherals, and office technology solutions for SMB clients.',
         'Deployed VPN solutions and internal file-sharing infrastructure tailored to client needs.'
       ]" :key="index">
-        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0 break-inside-avoid"
             :class="open && 'list-item-fade'"
             :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
@@ -331,7 +331,7 @@ const description = "20+ years of technical roles across security, infrastructur
        x-transition:leave-start="opacity-100 max-h-screen"
        x-transition:leave-end="opacity-0 max-h-0"
        class="overflow-hidden mt-2">
-    <ul class="space-y-2 py-2">
+    <ul class="space-y-2 py-2 md:columns-2 md:gap-6 lg:gap-8">
       <template x-for="(item, index) in [
         'Provided on-site IT support for small and mid-sized businesses, troubleshooting hardware and network issues.',
         'Assembled and configured desktop PCs, installed operating systems, and performed routine maintenance tasks.',
@@ -340,7 +340,7 @@ const description = "20+ years of technical roles across security, infrastructur
         'Installed and updated antivirus solutions; educated end-users on basic cybersecurity hygiene.',
         'Handled system reinstalls, data backups, and peripheral setup for printers, scanners, and routers.'
       ]" :key="index">
-        <li class="list-disc list-inside text-steel-300 text-base opacity-0"
+        <li class="list-disc list-inside text-steel-300 text-base opacity-0 break-inside-avoid"
             :class="open && 'list-item-fade'"
             :style="open && ('animation-delay: ' + (index * 80) + 'ms')">
           <span x-text="item"></span>
