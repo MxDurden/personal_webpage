@@ -1,0 +1,228 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+  prevPost?: { slug: string; data: CollectionEntry<"posts">["data"] };
+  nextPost?: { slug: string; data: CollectionEntry<"posts">["data"] };
+  headings?: { depth: number; slug: string; text: string }[];
+}
+
+const { post, prevPost, nextPost, headings = [] } = Astro.props;
+const { title, description, pubDate, updatedDate, tags, category } = post.data;
+
+function getReadingTime(content: string): number {
+  const wordsPerMinute = 200;
+  const words = content.trim().split(/\s+/).length;
+  return Math.ceil(words / wordsPerMinute);
+}
+
+const readingTime = getReadingTime(post.body);
+
+const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(date);
+};
+
+const categoryColors = {
+  tech: "text-accent border-accent/30 bg-accent/10",
+  notes: "text-blue-400 border-blue-400/30 bg-blue-400/10",
+  life: "text-purple-400 border-purple-400/30 bg-purple-400/10",
+};
+---
+
+<BaseLayout>
+  <article class="container mx-auto px-6 md:px-12 py-12 max-w-4xl">
+    <header class="mb-12 space-y-6">
+      <div class="flex flex-wrap gap-3 items-center text-sm">
+        <a
+          href={`/blog/category/${category}`}
+          class={`px-3 py-1 rounded-lg border font-mono transition-all duration-200 hover:scale-105 ${categoryColors[category]}`}
+        >
+          {category}
+        </a>
+        <span class="text-steel-500">•</span>
+        <time datetime={pubDate.toISOString()} class="text-steel-400 font-mono">
+          {formatDate(pubDate)}
+        </time>
+        {updatedDate && (
+          <>
+            <span class="text-steel-500">•</span>
+            <span class="text-steel-500 font-mono text-xs">
+              Updated {formatDate(updatedDate)}
+            </span>
+          </>
+        )}
+        <span class="text-steel-500">•</span>
+        <span class="text-steel-400 font-mono">{readingTime} min read</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold text-steel-100 leading-tight">
+        {title}
+      </h1>
+
+      <p class="text-lg text-steel-300 leading-relaxed">
+        {description}
+      </p>
+
+      {tags.length > 0 && (
+        <div class="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <a
+              href={`/blog/tag/${tag}`}
+              class="px-3 py-1 text-xs font-mono text-steel-400 bg-steel-900/50 border border-steel-800 rounded hover:border-accent/50 hover:text-accent transition-all duration-200"
+            >
+              #{tag}
+            </a>
+          ))}
+        </div>
+      )}
+    </header>
+
+    {headings.length > 0 && (
+      <aside class="mb-12 p-6 bg-carbon/50 border border-steel-900 rounded-lg">
+        <h2 class="text-sm font-mono font-bold text-steel-300 mb-4 uppercase tracking-wide">
+          Table of Contents
+        </h2>
+        <nav>
+          <ul class="space-y-2">
+            {headings.map((heading) => (
+              <li style={`margin-left: ${(heading.depth - 2) * 1}rem`}>
+                <a
+                  href={`#${heading.slug}`}
+                  class="text-sm text-steel-400 hover:text-accent transition-colors duration-200 font-mono"
+                >
+                  {heading.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+    )}
+
+    <div class="prose prose-invert prose-steel max-w-none">
+      <slot />
+    </div>
+
+    {(prevPost || nextPost) && (
+      <nav class="mt-16 pt-8 border-t border-steel-900">
+        <h2 class="text-sm font-mono font-bold text-steel-400 mb-6 uppercase tracking-wide">
+          Continue Reading
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {prevPost && (
+            <a
+              href={`/blog/${prevPost.slug}`}
+              class="p-6 bg-carbon/50 border border-steel-900 rounded-lg hover:border-steel-700 transition-all duration-300 group"
+            >
+              <div class="text-xs font-mono text-steel-500 mb-2">← Previous</div>
+              <div class="text-steel-200 font-mono group-hover:text-accent transition-colors">
+                {prevPost.data.title}
+              </div>
+            </a>
+          )}
+          {nextPost && (
+            <a
+              href={`/blog/${nextPost.slug}`}
+              class="p-6 bg-carbon/50 border border-steel-900 rounded-lg hover:border-steel-700 transition-all duration-300 group md:text-right"
+            >
+              <div class="text-xs font-mono text-steel-500 mb-2">Next →</div>
+              <div class="text-steel-200 font-mono group-hover:text-accent transition-colors">
+                {nextPost.data.title}
+              </div>
+            </a>
+          )}
+        </div>
+      </nav>
+    )}
+
+    <div class="mt-12 text-center">
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-steel-900/50 border border-steel-700 text-steel-200 font-mono text-sm rounded-lg hover:bg-steel-800/50 hover:border-steel-600 transition-all duration-300"
+      >
+        ← Back to Blog
+      </a>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .prose {
+    @apply text-steel-300 leading-relaxed;
+  }
+
+  .prose :global(h2) {
+    @apply text-2xl font-bold text-steel-100 mt-12 mb-4 font-mono;
+  }
+
+  .prose :global(h3) {
+    @apply text-xl font-bold text-steel-200 mt-8 mb-3 font-mono;
+  }
+
+  .prose :global(h4) {
+    @apply text-lg font-bold text-steel-300 mt-6 mb-2 font-mono;
+  }
+
+  .prose :global(p) {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .prose :global(a) {
+    @apply text-accent hover:underline;
+  }
+
+  .prose :global(strong) {
+    @apply text-steel-100 font-semibold;
+  }
+
+  .prose :global(code) {
+    @apply bg-steel-900/70 px-1.5 py-0.5 rounded text-accent text-sm font-mono;
+  }
+
+  .prose :global(pre) {
+    @apply bg-steel-900/70 border border-steel-800 rounded-lg p-4 overflow-x-auto mb-6;
+  }
+
+  .prose :global(pre code) {
+    @apply bg-transparent px-0 py-0;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    @apply mb-4 ml-6 space-y-2;
+  }
+
+  .prose :global(li) {
+    @apply text-steel-300;
+  }
+
+  .prose :global(blockquote) {
+    @apply border-l-4 border-accent/50 pl-4 italic text-steel-400 my-6;
+  }
+
+  .prose :global(hr) {
+    @apply border-steel-800 my-8;
+  }
+
+  .prose :global(img) {
+    @apply rounded-lg my-6;
+  }
+
+  .prose :global(table) {
+    @apply w-full border-collapse my-6;
+  }
+
+  .prose :global(th) {
+    @apply bg-steel-900/70 border border-steel-800 px-4 py-2 text-left font-mono text-steel-200;
+  }
+
+  .prose :global(td) {
+    @apply border border-steel-800 px-4 py-2;
+  }
+</style>
