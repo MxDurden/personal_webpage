@@ -41,21 +41,16 @@ import Footer from "../components/Footer.astro";
     </script>
   </head>
 
-  <body class="min-h-screen flex flex-col bg-[#0a0a0a] text-[#e0e0e0] font-mono animate-fade-in">
-    
-    <!-- Header -->
-    <header class="shadow-sm animate-slide-down bg-black/80 backdrop-blur z-10 relative">
-      <div class="max-w-7xl mx-auto px-4">
-        <Navbar />
-      </div>
+  <body class="min-h-screen flex flex-col bg-darker text-steel-100 font-mono">
+
+    <header class="relative z-50">
+      <Navbar />
     </header>
 
-    <!-- Main content -->
-    <main class="flex-1 z-10 relative px-4 max-w-7xl mx-auto w-full">
+    <main class="flex-1 relative">
       <slot />
     </main>
 
-    <!-- Footer -->
     <Footer />
   </body>
 </html>
