@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  url: string;
+  image?: string;
+  tags?: string[];
+}
+
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  url,
+  image = `${Astro.site}images/og-banner.png`,
+  tags = [],
+} = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "image": image,
+  "datePublished": pubDate.toISOString(),
+  "dateModified": (updatedDate || pubDate).toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": "Isaac Quezada",
+    "url": Astro.site?.href || "https://isaacquezada.dev",
+    "jobTitle": "DevOps Engineer & CiberSecurity Consultant"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Isaac Quezada",
+    "url": Astro.site?.href || "https://isaacquezada.dev"
+  },
+  "url": url,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": url
+  },
+  "keywords": tags.join(", ")
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

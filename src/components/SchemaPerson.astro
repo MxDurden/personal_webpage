@@ -1,0 +1,30 @@
+---
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Isaac Quezada",
+  "url": Astro.site?.href || "https://isaacquezada.dev",
+  "jobTitle": "DevOps Engineer & CiberSecurity Consultant",
+  "sameAs": [
+    "https://linkedin.com/in/isaacquezada",
+    "https://github.com/MxDurden"
+  ],
+  "knowsAbout": [
+    "DevOps",
+    "CiberSecurity",
+    "Linux",
+    "Automation",
+    "Cloud Infrastructure",
+    "Infrastructure as Code",
+    "Security",
+    "CI/CD",
+    "Terraform",
+    "Ansible",
+    "Docker",
+    "Kubernetes"
+  ],
+  "description": "DevOps & cybersecurity specialist focused on automation, infrastructure design, and systems hardening. Over 20 years of experience in enterprise environments and cloud-native solutions."
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

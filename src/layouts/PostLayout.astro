@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import SchemaBlogPosting from "../components/SchemaBlogPosting.astro";
+import SEO from "../components/SEO.astro";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -10,7 +12,12 @@ interface Props {
 }
 
 const { post, prevPost, nextPost, headings = [] } = Astro.props;
-const { title, description, pubDate, updatedDate, tags, category } = post.data;
+const { title, description, pubDate, updatedDate, tags, category, draft, coverImage } = post.data;
+
+const postUrl = new URL(`/blog/${post.slug}`, Astro.site).href;
+const ogImage = coverImage?.src
+  ? new URL(coverImage.src, Astro.site).href
+  : `${Astro.site}images/og-banner.png`;
 
 function getReadingTime(content: string): number {
   const wordsPerMinute = 200;
@@ -35,7 +42,24 @@ const categoryColors = {
 };
 ---
 
-<BaseLayout>
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={ogImage}
+  ogType="article"
+  noindex={draft}
+  canonical={postUrl}
+>
+  <SchemaBlogPosting
+    slot="head"
+    title={title}
+    description={description}
+    pubDate={pubDate}
+    updatedDate={updatedDate}
+    url={postUrl}
+    image={ogImage}
+    tags={tags}
+  />
   <article class="container mx-auto px-6 md:px-12 py-12 max-w-4xl">
     <header class="mb-12 space-y-6">
       <div class="flex flex-wrap gap-3 items-center text-sm">

@@ -2,6 +2,27 @@
 import "../styles/global.css";
 import Navbar from '../components/Navbar.astro';
 import Footer from "../components/Footer.astro";
+import SEO from '../components/SEO.astro';
+import SchemaWebSite from '../components/SchemaWebSite.astro';
+import SchemaPerson from '../components/SchemaPerson.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  canonical?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage,
+  ogType = 'website',
+  noindex = false,
+  canonical,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -9,36 +30,22 @@ import Footer from "../components/Footer.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="alternate" type="application/rss+xml" title="Isaac Quezada Blog" href="/rss.xml" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <!--  GLOBAL SEO META -->
-    <title>Isaac Quezada — DevOps Engineer & Cybersecurity Consultant</title>
-    <meta name="description" content="DevOps and cybersecurity specialist focused on automation, cloud infrastructure, and secure systems. I help teams ship secure and scalable software." />
-    <meta name="keywords" content="DevOps engineer, cybersecurity, Linux, infrastructure consultant, secure automation, cloud architecture, freelance DevOps, Ansible, Terraform, CI/CD" />
+    <SEO
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      ogType={ogType}
+      noindex={noindex}
+      canonical={canonical}
+    />
 
-    <!--  Open Graph -->
-    <meta property="og:title" content="Isaac Quezada — DevOps & Cybersecurity Specialist" />
-    <meta property="og:description" content="Helping teams and companies design secure infrastructure and automation workflows." />
-    <meta property="og:image" content="https://isaacquezada.dev/images/og-banner.png" />
-    <meta property="og:url" content="https://isaacquezada.dev" />
-    <meta property="og:type" content="website" />
+    <SchemaWebSite />
+    <SchemaPerson />
 
-    <!--  Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Isaac Quezada",
-      "url": "https://isaacquezada.dev",
-      "jobTitle": "DevOps Engineer & Security Consultant",
-      "sameAs": [
-        "https://linkedin.com/in/isaacquezada",
-        "https://github.com/MxDurden"
-      ],
-      "knowsAbout": ["DevOps", "Cybersecurity", "Linux", "Automation", "Cloud", "Infrastructure", "Security", "CI/CD", "Terraform", "Ansible"],
-      "description": "DevOps & cybersecurity specialist focused on automation, infrastructure design, and systems hardening. Over 20 years of experience in enterprise environments and cloud-native solutions."
-    }
-    </script>
+    <slot name="head" />
   </head>
 
   <body class="min-h-screen flex flex-col bg-darker text-steel-100 font-mono">

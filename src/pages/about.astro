@@ -1,39 +1,36 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "About | Isaac Quezada";
+const description = "Backend infrastructure and cybersecurity specialist with 20+ years of experience building secure, scalable, and automated systems for enterprise environments.";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>About</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body class="min-h-screen flex flex-col bg-[#0a0a0a] text-[#e0e0e0] font-mono">
-    <Navbar />
-
-    <main class="flex-grow container mx-auto px-4 py-12 max-w-3xl">
-  <div class="flex items-center gap-6 mb-8">
+<BaseLayout title={title} description={description}>
+  <section class="container mx-auto px-6 md:px-12 py-12 max-w-3xl">
+  <div class="flex items-center gap-6 mb-12">
   <img
     src="/images/avatar.png"
     alt="Professional pixel avatar"
-    class="w-16 h-16 rounded-full border border-gray-700"
+    class="w-16 h-16 rounded-full border border-steel-700"
     width="64"
     height="64"
+    loading="lazy"
   />
   <div>
-  <h1 class="text-3xl font-bold">About</h1>
-  <p class="text-sm text-gray-400">Infrastructure & Cybersecurity Specialist</p>
+  <h1 class="text-3xl md:text-4xl font-bold text-steel-100 font-mono mb-2">
+    <span class="text-accent">//</span> About
+  </h1>
+  <p class="text-sm text-steel-400">Infrastructure & CiberSecurity Specialist</p>
 
-  <div class="flex items-center gap-4 mt-2">
-  <a href="https://github.com/MxDurden" target="_blank" rel="noopener noreferrer" class="bg-[#c0c0c0] p-1 rounded hover:opacity-80">
-    <img src="/images/github.svg" alt="GitHub" class="w-7 h-7" />
+  <div class="flex items-center gap-4 mt-3">
+  <a href="https://github.com/MxDurden" target="_blank" rel="noopener noreferrer" class="bg-steel-700/50 p-1.5 rounded hover:bg-steel-600/50 transition-colors">
+    <img src="/images/github.svg" alt="GitHub" class="w-6 h-6" loading="lazy" width="24" height="24" />
   </a>
-  <a href="www.linkedin.com/in/isaac-quezada-055776105" target="_blank" rel="noopener noreferrer" class="bg-[#c0c0c0] p-1 rounded hover:opacity-80">
-    <img src="/images/linkedin.svg" alt="LinkedIn" class="w-7 h-7" />
+  <a href="https://www.linkedin.com/in/isaac-quezada-055776105" target="_blank" rel="noopener noreferrer" class="bg-steel-700/50 p-1.5 rounded hover:bg-steel-600/50 transition-colors">
+    <img src="/images/linkedin.svg" alt="LinkedIn" class="w-6 h-6" loading="lazy" width="24" height="24" />
   </a>
-  <a href="mailto:iq@isaacquezada.dev" class="bg-[#c0c0c0] p-1 rounded hover:opacity-80">
-    <img src="/images/email.svg" alt="Email" class="w-7 h-7" />
+  <a href="mailto:iq@isaacquezada.dev" class="bg-steel-700/50 p-1.5 rounded hover:bg-steel-600/50 transition-colors">
+    <img src="/images/email.svg" alt="Email" class="w-6 h-6" loading="lazy" width="24" height="24" />
   </a>
 </div>
 
@@ -41,32 +38,28 @@ import Footer from '../components/Footer.astro';
 
 </div>
 
-  <p class="mb-4">
+  <p class="mb-4 text-steel-300 leading-relaxed">
     I'm a backend infrastructure and cybersecurity specialist focused on building secure, scalable, and automated systems. Over the past 20+ years, I’ve worked in enterprise environments, designing and maintaining mission-critical infrastructure for organizations of all sizes — including global corporations and high-demand production systems.
   </p>
 
-  <p class="mb-4">
+  <p class="mb-4 text-steel-300 leading-relaxed">
     While I’m not a full-time freelancer, I do take on select consulting gigs, open source projects, and technical mentoring during my spare time. I’ve provided hands-on support and solutions in areas like server hardening, CI/CD automation, cloud migrations, and DevSecOps strategy.
   </p>
 
-  <p class="mb-4">
+  <p class="mb-4 text-steel-300 leading-relaxed">
     I believe in building systems that are simple, robust, and secure by design — not as an afterthought. I favor minimalism, both in code and architecture, and I try to avoid overengineering whenever possible.
   </p>
 
-  <p class="mb-4">
+  <p class="mb-4 text-steel-300 leading-relaxed">
     Most of the work showcased here is either a side-project or the result of solving a real-world problem that I found interesting or challenging enough to build from scratch.
   </p>
 
-  <p class="mb-4">
+  <p class="mb-4 text-steel-300 leading-relaxed">
     This site is intentionally minimalist. No trackers. No bloat. Just signal.
   </p>
 
   <p>
-    If you're looking to collaborate, hire, or just talk about infrastructure, automation, or security — <a href="/contact" class="text-green-400 underline hover:text-green-300">feel free to reach out</a>.
+    If you're looking to collaborate, hire, or just talk about infrastructure, automation, or security — <a href="/contact" class="text-accent underline hover:text-accent/80 transition-colors">feel free to reach out</a>.
   </p>
-</main>
-
-
-    <Footer />
-  </body>
-</html>
+  </section>
+</BaseLayout>

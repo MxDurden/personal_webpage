@@ -1,0 +1,9 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow hidden/admin paths
+Disallow: /h4x0r
+
+# Sitemap
+Sitemap: https://isaacquezada.dev/sitemap-index.xml

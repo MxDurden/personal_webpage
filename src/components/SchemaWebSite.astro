@@ -1,0 +1,29 @@
+---
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Isaac Quezada",
+  "description": "DevOps & cybersecurity specialist focused on automation, infrastructure design, and systems hardening.",
+  "url": Astro.site?.href || "https://isaacquezada.dev",
+  "author": {
+    "@type": "Person",
+    "name": "Isaac Quezada",
+    "url": Astro.site?.href || "https://isaacquezada.dev",
+    "jobTitle": "DevOps Engineer & CiberSecurity Consultant",
+    "sameAs": [
+      "https://linkedin.com/in/isaacquezada",
+      "https://github.com/MxDurden"
+    ]
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${Astro.site?.href || "https://isaacquezada.dev"}blog?q={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
